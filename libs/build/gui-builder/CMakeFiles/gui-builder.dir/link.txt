@@ -1,1 +1,0 @@
-/usr/bin/c++  -O3 -DNDEBUG   CMakeFiles/gui-builder.dir/src/main.cpp.o CMakeFiles/gui-builder.dir/src/Form.cpp.o CMakeFiles/gui-builder.dir/src/GuiBuilder.cpp.o  -o gui-builder -Wl,-rpath,"/home/user/Bureau/mario bros/libs/build/lib:/usr/local/lib:" ../lib/libtgui.so.0.8.5 /usr/local/lib/libsfml-graphics.so /usr/local/lib/libsfml-window.so /usr/local/lib/libsfml-system.so 
