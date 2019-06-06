@@ -1,0 +1,2030 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/AbsoluteOrRelativeValue.hpp
+TGUI/Global.hpp
+-
+TGUI/to_string.hpp
+-
+type_traits
+-
+string
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Animation.hpp
+TGUI/Vector2f.hpp
+-
+SFML/System/Time.hpp
+-
+functional
+-
+memory
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Any.hpp
+type_traits
+-
+utility
+-
+typeinfo
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Aurora/Config.hpp
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Aurora/Meta/Preprocessor.hpp
+TGUI/Aurora/Config.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Aurora/Meta/Templates.hpp
+TGUI/Aurora/Config.hpp
+-
+type_traits
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Aurora/SmartPtr/ClonersAndDeleters.hpp
+TGUI/Aurora/Meta/Templates.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Aurora/SmartPtr/CopiedPtr.hpp
+TGUI/Aurora/SmartPtr/ClonersAndDeleters.hpp
+-
+TGUI/Aurora/SmartPtr/Detail/PtrOwner.hpp
+-
+TGUI/Aurora/Tools/SafeBool.hpp
+-
+TGUI/Aurora/Tools/Swap.hpp
+-
+TGUI/Aurora/Config.hpp
+-
+algorithm
+-
+type_traits
+-
+utility
+-
+TGUI/Aurora/SmartPtr/Detail/Factories.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Aurora/SmartPtr/Detail/Factories.hpp
+TGUI/Aurora/Meta/Preprocessor.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Aurora/SmartPtr/Detail/PtrOwner.hpp
+TGUI/Aurora/Tools/NonCopyable.hpp
+-
+cassert
+-
+utility
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Aurora/Tools/Downcast.hpp
+cassert
+-
+type_traits
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Aurora/Tools/NonCopyable.hpp
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Aurora/Tools/SafeBool.hpp
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Aurora/Tools/Swap.hpp
+utility
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Clipboard.hpp
+TGUI/Config.hpp
+-
+SFML/System/String.hpp
+-
+SFML/Window/WindowHandle.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Clipping.hpp
+TGUI/Global.hpp
+-
+TGUI/Vector2f.hpp
+-
+SFML/Graphics/RenderTarget.hpp
+-
+SFML/Graphics/View.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Color.hpp
+TGUI/Config.hpp
+-
+SFML/Graphics/Color.hpp
+-
+SFML/System/String.hpp
+-
+cstdint
+-
+string
+-
+map
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Config.hpp
+SFML/Config.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Container.hpp
+list
+-
+TGUI/Widget.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/CopiedSharedPtr.hpp
+memory
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/CustomWidgetForBindings.hpp
+TGUI/Widget.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/DefaultFont.hpp
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Exception.hpp
+string
+-
+stdexcept
+-
+TGUI/Config.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/FloatRect.hpp
+TGUI/Config.hpp
+-
+SFML/Graphics/Rect.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Font.hpp
+TGUI/Config.hpp
+-
+SFML/Graphics/Font.hpp
+-
+cstdint
+-
+string
+-
+cstddef
+-
+memory
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Global.hpp
+TGUI/Config.hpp
+-
+TGUI/Exception.hpp
+-
+TGUI/Font.hpp
+-
+cstdint
+-
+string
+-
+memory
+-
+iostream
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Gui.hpp
+TGUI/Container.hpp
+-
+SFML/Graphics/RenderWindow.hpp
+-
+queue
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Layout.hpp
+TGUI/Config.hpp
+-
+TGUI/Vector2f.hpp
+-
+type_traits
+-
+functional
+-
+memory
+-
+string
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Loading/DataIO.hpp
+TGUI/Config.hpp
+-
+SFML/System/String.hpp
+-
+sstream
+-
+memory
+-
+vector
+-
+string
+-
+map
+-
+cstdio
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Loading/Deserializer.hpp
+TGUI/ObjectConverter.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Loading/Serializer.hpp
+TGUI/ObjectConverter.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Loading/Theme.hpp
+TGUI/Loading/ThemeLoader.hpp
+-
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Loading/ThemeLoader.hpp
+TGUI/Config.hpp
+-
+SFML/System/String.hpp
+-
+memory
+-
+string
+-
+vector
+-
+map
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Loading/WidgetFactory.hpp
+TGUI/Widget.hpp
+-
+TGUI/Loading/DataIO.hpp
+-
+functional
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/ObjectConverter.hpp
+TGUI/TextStyle.hpp
+-
+TGUI/Outline.hpp
+-
+TGUI/Texture.hpp
+-
+TGUI/Color.hpp
+-
+TGUI/Font.hpp
+-
+variant
+-
+TGUI/Any.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Outline.hpp
+TGUI/Vector2f.hpp
+-
+TGUI/AbsoluteOrRelativeValue.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/RendererDefines.hpp
+TGUI/Loading/Theme.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/BoxLayoutRenderer.hpp
+TGUI/Renderers/GroupRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/ButtonRenderer.hpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/ChatBoxRenderer.hpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/ChildWindowRenderer.hpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/ComboBoxRenderer.hpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/EditBoxRenderer.hpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/GroupRenderer.hpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/KnobRenderer.hpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/LabelRenderer.hpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/ListBoxRenderer.hpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/ListViewRenderer.hpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/MenuBarRenderer.hpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/MessageBoxRenderer.hpp
+TGUI/Renderers/ChildWindowRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/PanelRenderer.hpp
+TGUI/Renderers/GroupRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/PictureRenderer.hpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/ProgressBarRenderer.hpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/RadioButtonRenderer.hpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/RangeSliderRenderer.hpp
+TGUI/Renderers/SliderRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/ScrollablePanelRenderer.hpp
+TGUI/Renderers/PanelRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/ScrollbarRenderer.hpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/SliderRenderer.hpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/SpinButtonRenderer.hpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/TabsRenderer.hpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/TextBoxRenderer.hpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/TreeViewRenderer.hpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Renderers/WidgetRenderer.hpp
+TGUI/Config.hpp
+-
+TGUI/ObjectConverter.hpp
+-
+TGUI/Loading/DataIO.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Signal.hpp
+TGUI/Global.hpp
+-
+TGUI/Vector2f.hpp
+-
+TGUI/Animation.hpp
+-
+SFML/System/String.hpp
+-
+functional
+-
+typeindex
+-
+memory
+-
+vector
+-
+deque
+-
+map
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/SignalImpl.hpp
+TGUI/Signal.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Sprite.hpp
+TGUI/Texture.hpp
+-
+TGUI/Vector2f.hpp
+-
+TGUI/FloatRect.hpp
+-
+TGUI/Color.hpp
+-
+TGUI/Aurora/SmartPtr/CopiedPtr.hpp
+-
+SFML/Graphics/Transformable.hpp
+-
+SFML/Graphics/RenderStates.hpp
+-
+SFML/Graphics/Vertex.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/SvgImage.hpp
+TGUI/Vector2f.hpp
+-
+SFML/System/String.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Text.hpp
+TGUI/Font.hpp
+-
+TGUI/Color.hpp
+-
+TGUI/Vector2f.hpp
+-
+TGUI/TextStyle.hpp
+-
+SFML/Graphics/Text.hpp
+-
+SFML/Graphics/Transformable.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/TextStyle.hpp
+TGUI/Config.hpp
+-
+SFML/Graphics/Text.hpp
+-
+string
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Texture.hpp
+TGUI/TextureData.hpp
+-
+TGUI/Vector2f.hpp
+-
+TGUI/Color.hpp
+-
+SFML/System/String.hpp
+-
+functional
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/TextureData.hpp
+TGUI/SvgImage.hpp
+-
+SFML/Graphics/Image.hpp
+-
+SFML/Graphics/Texture.hpp
+-
+SFML/Graphics/Rect.hpp
+-
+SFML/Graphics/Shader.hpp
+-
+memory
+-
+string
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/TextureManager.hpp
+TGUI/TextureData.hpp
+-
+memory
+-
+list
+-
+map
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/ToolTip.hpp
+TGUI/Config.hpp
+-
+TGUI/Vector2f.hpp
+-
+SFML/System/Time.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Vector2f.hpp
+TGUI/Global.hpp
+-
+SFML/System/Vector2.hpp
+-
+SFML/System/Err.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widget.hpp
+TGUI/Global.hpp
+-
+TGUI/Signal.hpp
+-
+TGUI/Sprite.hpp
+-
+TGUI/Layout.hpp
+-
+TGUI/Vector2f.hpp
+-
+TGUI/Loading/Theme.hpp
+-
+TGUI/Loading/DataIO.hpp
+-
+TGUI/Loading/Serializer.hpp
+-
+TGUI/Loading/Deserializer.hpp
+-
+TGUI/Renderers/WidgetRenderer.hpp
+-
+TGUI/Aurora/SmartPtr/CopiedPtr.hpp
+-
+TGUI/Aurora/Tools/Downcast.hpp
+-
+SFML/System/Time.hpp
+-
+SFML/Window/Event.hpp
+-
+SFML/Graphics/RenderTarget.hpp
+-
+unordered_set
+-
+any
+-
+TGUI/Any.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/BitmapButton.hpp
+TGUI/Widgets/Button.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/BoxLayout.hpp
+TGUI/Widgets/Group.hpp
+-
+TGUI/Renderers/BoxLayoutRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/BoxLayoutRatios.hpp
+TGUI/Widgets/BoxLayout.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/Button.hpp
+TGUI/Renderers/ButtonRenderer.hpp
+-
+TGUI/Widgets/ClickableWidget.hpp
+-
+TGUI/Text.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/Canvas.hpp
+TGUI/Widgets/ClickableWidget.hpp
+-
+SFML/Graphics/RenderTexture.hpp
+-
+SFML/Graphics/Sprite.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/ChatBox.hpp
+TGUI/CopiedSharedPtr.hpp
+-
+TGUI/Widgets/Scrollbar.hpp
+-
+TGUI/Renderers/ChatBoxRenderer.hpp
+-
+TGUI/Text.hpp
+-
+deque
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/CheckBox.hpp
+TGUI/Widgets/RadioButton.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/ChildWindow.hpp
+TGUI/CopiedSharedPtr.hpp
+-
+TGUI/Container.hpp
+-
+TGUI/Widgets/Button.hpp
+-
+TGUI/Renderers/ChildWindowRenderer.hpp
+-
+limits
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/ClickableWidget.hpp
+TGUI/Widget.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/ComboBox.hpp
+TGUI/Widgets/ListBox.hpp
+-
+TGUI/Renderers/ComboBoxRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/EditBox.hpp
+TGUI/Widgets/ClickableWidget.hpp
+-
+TGUI/Renderers/EditBoxRenderer.hpp
+-
+TGUI/FloatRect.hpp
+-
+TGUI/Text.hpp
+-
+regex
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/Grid.hpp
+TGUI/Container.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/Group.hpp
+TGUI/Container.hpp
+-
+TGUI/Renderers/GroupRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/HorizontalLayout.hpp
+TGUI/Widgets/BoxLayoutRatios.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/HorizontalWrap.hpp
+TGUI/Widgets/BoxLayout.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/Knob.hpp
+TGUI/Widget.hpp
+-
+TGUI/Renderers/KnobRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/Label.hpp
+TGUI/Widgets/ClickableWidget.hpp
+-
+TGUI/Renderers/LabelRenderer.hpp
+-
+TGUI/CopiedSharedPtr.hpp
+-
+TGUI/Widgets/Scrollbar.hpp
+-
+TGUI/Text.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/ListBox.hpp
+TGUI/CopiedSharedPtr.hpp
+-
+TGUI/Widgets/Scrollbar.hpp
+-
+TGUI/Renderers/ListBoxRenderer.hpp
+-
+TGUI/Text.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/ListView.hpp
+TGUI/CopiedSharedPtr.hpp
+-
+TGUI/Widgets/Scrollbar.hpp
+-
+TGUI/Renderers/ListViewRenderer.hpp
+-
+TGUI/Text.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/MenuBar.hpp
+TGUI/Widget.hpp
+-
+TGUI/Renderers/MenuBarRenderer.hpp
+-
+TGUI/Text.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/MessageBox.hpp
+TGUI/Widgets/Label.hpp
+-
+TGUI/Widgets/Button.hpp
+-
+TGUI/Widgets/ChildWindow.hpp
+-
+TGUI/Renderers/MessageBoxRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/Panel.hpp
+TGUI/Widgets/Group.hpp
+-
+TGUI/Renderers/PanelRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/Picture.hpp
+TGUI/Widgets/ClickableWidget.hpp
+-
+TGUI/Renderers/PictureRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/ProgressBar.hpp
+TGUI/Renderers/ProgressBarRenderer.hpp
+-
+TGUI/Widgets/ClickableWidget.hpp
+-
+TGUI/Text.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/RadioButton.hpp
+TGUI/Renderers/RadioButtonRenderer.hpp
+-
+TGUI/Widgets/ClickableWidget.hpp
+-
+TGUI/Text.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/RadioButtonGroup.hpp
+TGUI/Widgets/Group.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/RangeSlider.hpp
+TGUI/Widget.hpp
+-
+TGUI/Renderers/RangeSliderRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/ScrollablePanel.hpp
+TGUI/CopiedSharedPtr.hpp
+-
+TGUI/Widgets/Panel.hpp
+-
+TGUI/Widgets/Scrollbar.hpp
+-
+TGUI/Renderers/ScrollablePanelRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/Scrollbar.hpp
+TGUI/Widget.hpp
+-
+TGUI/Renderers/ScrollbarRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/Slider.hpp
+TGUI/Widget.hpp
+-
+TGUI/Renderers/SliderRenderer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/SpinButton.hpp
+TGUI/Renderers/SpinButtonRenderer.hpp
+-
+TGUI/Widgets/ClickableWidget.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/Tabs.hpp
+TGUI/Widget.hpp
+-
+TGUI/Renderers/TabsRenderer.hpp
+-
+TGUI/Text.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/TextBox.hpp
+TGUI/CopiedSharedPtr.hpp
+-
+TGUI/Widgets/Scrollbar.hpp
+-
+TGUI/Renderers/TextBoxRenderer.hpp
+-
+TGUI/Text.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/TreeView.hpp
+TGUI/CopiedSharedPtr.hpp
+-
+TGUI/Widgets/Scrollbar.hpp
+-
+TGUI/Renderers/TreeViewRenderer.hpp
+-
+TGUI/Text.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/Widgets/VerticalLayout.hpp
+TGUI/Widgets/BoxLayoutRatios.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/nanosvg/nanosvg.h
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+math.h
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/nanosvg/nanosvgrast.h
+math.h
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/include/TGUI/to_string.hpp
+sstream
+-
+locale
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Animation.cpp
+TGUI/Animation.hpp
+-
+TGUI/Widget.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Clipboard.cpp
+TGUI/Clipboard.hpp
+-
+SFML/Window/Clipboard.hpp
+-
+windows.h
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Clipping.cpp
+TGUI/Clipping.hpp
+-
+cmath
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Color.cpp
+TGUI/Color.hpp
+-
+TGUI/Loading/Deserializer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Container.cpp
+TGUI/Container.hpp
+-
+TGUI/ToolTip.hpp
+-
+TGUI/Widgets/RadioButton.hpp
+-
+TGUI/Loading/WidgetFactory.hpp
+-
+cassert
+-
+fstream
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/CustomWidgetForBindings.cpp
+TGUI/CustomWidgetForBindings.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Font.cpp
+TGUI/Font.hpp
+-
+TGUI/Loading/Deserializer.hpp
+-
+cassert
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Global.cpp
+TGUI/Global.hpp
+-
+TGUI/Clipboard.hpp
+-
+TGUI/DefaultFont.hpp
+-
+functional
+-
+sstream
+-
+locale
+-
+cctype
+-
+cmath
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Gui.cpp
+TGUI/Gui.hpp
+-
+TGUI/Clipboard.hpp
+-
+TGUI/ToolTip.hpp
+-
+TGUI/Clipping.hpp
+-
+SFML/Graphics/RenderTexture.hpp
+-
+cassert
+-
+Windows.h
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Layout.cpp
+TGUI/Layout.hpp
+-
+TGUI/Widget.hpp
+-
+TGUI/Gui.hpp
+-
+TGUI/to_string.hpp
+-
+SFML/System/Err.hpp
+-
+cassert
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Loading/DataIO.cpp
+TGUI/Loading/DataIO.hpp
+-
+TGUI/Global.hpp
+-
+TGUI/to_string.hpp
+-
+cctype
+-
+cassert
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Loading/Deserializer.cpp
+TGUI/Loading/Deserializer.hpp
+-
+TGUI/Loading/DataIO.hpp
+-
+TGUI/Renderers/WidgetRenderer.hpp
+-
+TGUI/Global.hpp
+-
+cstdint
+-
+cassert
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Loading/Serializer.cpp
+TGUI/Loading/Serializer.hpp
+-
+TGUI/Loading/DataIO.hpp
+-
+TGUI/Renderers/WidgetRenderer.hpp
+-
+TGUI/Exception.hpp
+-
+TGUI/to_string.hpp
+-
+cassert
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Loading/Theme.cpp
+TGUI/Loading/Theme.hpp
+-
+TGUI/Loading/Serializer.hpp
+-
+TGUI/Global.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Loading/ThemeLoader.cpp
+TGUI/Loading/Deserializer.hpp
+-
+TGUI/Loading/ThemeLoader.hpp
+-
+TGUI/Loading/DataIO.hpp
+-
+TGUI/Global.hpp
+-
+cassert
+-
+sstream
+-
+fstream
+-
+set
+-
+SFML/System/NativeActivity.hpp
+-
+android/asset_manager_jni.h
+-
+android/asset_manager.h
+-
+android/native_activity.h
+-
+android/configuration.h
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Loading/WidgetFactory.cpp
+TGUI/Loading/WidgetFactory.hpp
+-
+TGUI/Widgets/BitmapButton.hpp
+-
+TGUI/Widgets/Button.hpp
+-
+TGUI/Widgets/Canvas.hpp
+-
+TGUI/Widgets/ChatBox.hpp
+-
+TGUI/Widgets/CheckBox.hpp
+-
+TGUI/Widgets/ChildWindow.hpp
+-
+TGUI/Widgets/ComboBox.hpp
+-
+TGUI/Widgets/EditBox.hpp
+-
+TGUI/Widgets/Grid.hpp
+-
+TGUI/Widgets/Group.hpp
+-
+TGUI/Widgets/HorizontalLayout.hpp
+-
+TGUI/Widgets/HorizontalWrap.hpp
+-
+TGUI/Widgets/Knob.hpp
+-
+TGUI/Widgets/Label.hpp
+-
+TGUI/Widgets/ListBox.hpp
+-
+TGUI/Widgets/ListView.hpp
+-
+TGUI/Widgets/MenuBar.hpp
+-
+TGUI/Widgets/MessageBox.hpp
+-
+TGUI/Widgets/Panel.hpp
+-
+TGUI/Widgets/Picture.hpp
+-
+TGUI/Widgets/ProgressBar.hpp
+-
+TGUI/Widgets/RadioButton.hpp
+-
+TGUI/Widgets/RadioButtonGroup.hpp
+-
+TGUI/Widgets/RangeSlider.hpp
+-
+TGUI/Widgets/ScrollablePanel.hpp
+-
+TGUI/Widgets/Scrollbar.hpp
+-
+TGUI/Widgets/Slider.hpp
+-
+TGUI/Widgets/SpinButton.hpp
+-
+TGUI/Widgets/Tabs.hpp
+-
+TGUI/Widgets/TextBox.hpp
+-
+TGUI/Widgets/TreeView.hpp
+-
+TGUI/Widgets/VerticalLayout.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/ObjectConverter.cpp
+TGUI/ObjectConverter.hpp
+-
+TGUI/Loading/Serializer.hpp
+-
+TGUI/Loading/Deserializer.hpp
+-
+cassert
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/BoxLayoutRenderer.cpp
+TGUI/Renderers/BoxLayoutRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/ButtonRenderer.cpp
+TGUI/Renderers/ButtonRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/ChatBoxRenderer.cpp
+TGUI/Renderers/ChatBoxRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/ChildWindowRenderer.cpp
+TGUI/Renderers/ChildWindowRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/ComboBoxRenderer.cpp
+TGUI/Renderers/ComboBoxRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/EditBoxRenderer.cpp
+TGUI/Renderers/EditBoxRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/GroupRenderer.cpp
+TGUI/Renderers/GroupRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/KnobRenderer.cpp
+TGUI/Renderers/KnobRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/LabelRenderer.cpp
+TGUI/Renderers/LabelRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/ListBoxRenderer.cpp
+TGUI/Renderers/ListBoxRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/ListViewRenderer.cpp
+TGUI/Renderers/ListViewRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/MenuBarRenderer.cpp
+TGUI/Renderers/MenuBarRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/MessageBoxRenderer.cpp
+TGUI/Renderers/MessageBoxRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/PanelRenderer.cpp
+TGUI/Renderers/PanelRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/PictureRenderer.cpp
+TGUI/Renderers/PictureRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/ProgressBarRenderer.cpp
+TGUI/Renderers/ProgressBarRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/RadioButtonRenderer.cpp
+TGUI/Renderers/RadioButtonRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/RangeSliderRenderer.cpp
+TGUI/Renderers/RangeSliderRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/ScrollablePanelRenderer.cpp
+TGUI/Renderers/ScrollablePanelRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/ScrollbarRenderer.cpp
+TGUI/Renderers/ScrollbarRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/SliderRenderer.cpp
+TGUI/Renderers/SliderRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/SpinButtonRenderer.cpp
+TGUI/Renderers/SpinButtonRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/TabsRenderer.cpp
+TGUI/Renderers/TabsRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/TextBoxRenderer.cpp
+TGUI/Renderers/TextBoxRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/TreeViewRenderer.cpp
+TGUI/Renderers/TreeViewRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Renderers/WidgetRenderer.cpp
+TGUI/Renderers/WidgetRenderer.hpp
+-
+TGUI/RendererDefines.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Signal.cpp
+TGUI/Signal.hpp
+-
+TGUI/Widget.hpp
+-
+TGUI/Widgets/ChildWindow.hpp
+-
+TGUI/SignalImpl.hpp
+-
+set
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Sprite.cpp
+TGUI/Sprite.hpp
+-
+TGUI/Color.hpp
+-
+TGUI/Clipping.hpp
+-
+cassert
+-
+cmath
+-
+optional
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/SvgImage.cpp
+TGUI/SvgImage.hpp
+-
+TGUI/nanosvg/nanosvg.h
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/TGUI/nanosvg/nanosvg.h
+TGUI/nanosvg/nanosvgrast.h
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/TGUI/nanosvg/nanosvgrast.h
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Text.cpp
+TGUI/Text.hpp
+-
+TGUI/Global.hpp
+-
+SFML/Graphics/RenderTarget.hpp
+-
+cmath
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/TextStyle.cpp
+TGUI/Loading/Deserializer.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Texture.cpp
+TGUI/Global.hpp
+-
+TGUI/Texture.hpp
+-
+TGUI/Exception.hpp
+-
+TGUI/TextureManager.hpp
+-
+cassert
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/TextureManager.cpp
+TGUI/Texture.hpp
+-
+TGUI/TextureManager.hpp
+-
+TGUI/Exception.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/ToolTip.cpp
+TGUI/ToolTip.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widget.cpp
+TGUI/ToolTip.hpp
+-
+TGUI/Container.hpp
+-
+TGUI/Animation.hpp
+-
+TGUI/Vector2f.hpp
+-
+TGUI/Loading/WidgetFactory.hpp
+-
+SFML/System/Err.hpp
+-
+SFML/Graphics/RectangleShape.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/BitmapButton.cpp
+TGUI/Widgets/BitmapButton.hpp
+-
+TGUI/Clipping.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/BoxLayout.cpp
+TGUI/Widgets/BoxLayout.hpp
+-
+TGUI/Widgets/ClickableWidget.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/BoxLayoutRatios.cpp
+TGUI/Widgets/BoxLayoutRatios.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/Button.cpp
+TGUI/Widgets/Button.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/Canvas.cpp
+TGUI/Widgets/Canvas.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/ChatBox.cpp
+TGUI/Widgets/ChatBox.hpp
+-
+TGUI/Clipping.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/CheckBox.cpp
+TGUI/Widgets/CheckBox.hpp
+-
+TGUI/Clipping.hpp
+-
+SFML/Graphics/RectangleShape.hpp
+-
+cmath
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/ChildWindow.cpp
+TGUI/Widgets/ChildWindow.hpp
+-
+TGUI/Vector2f.hpp
+-
+TGUI/Clipping.hpp
+-
+TGUI/SignalImpl.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/ClickableWidget.cpp
+TGUI/Widgets/ClickableWidget.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/ComboBox.cpp
+TGUI/Container.hpp
+-
+TGUI/Widgets/ComboBox.hpp
+-
+TGUI/Clipping.hpp
+-
+SFML/Graphics/ConvexShape.hpp
+-
+TGUI/SignalImpl.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/EditBox.cpp
+TGUI/Container.hpp
+-
+TGUI/Widgets/EditBox.hpp
+-
+TGUI/Clipboard.hpp
+-
+TGUI/Clipping.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/Grid.cpp
+TGUI/Widgets/Grid.hpp
+-
+TGUI/SignalImpl.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/Group.cpp
+TGUI/Widgets/Group.hpp
+-
+TGUI/Clipping.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/HorizontalLayout.cpp
+TGUI/Widgets/HorizontalLayout.hpp
+-
+numeric
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/HorizontalWrap.cpp
+TGUI/Widgets/HorizontalWrap.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/Knob.cpp
+TGUI/Widgets/Knob.hpp
+-
+SFML/Graphics/CircleShape.hpp
+-
+cmath
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/Label.cpp
+TGUI/Widgets/Label.hpp
+-
+TGUI/Clipping.hpp
+-
+cmath
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/ListBox.cpp
+TGUI/Widgets/ListBox.hpp
+-
+TGUI/Clipping.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/ListView.cpp
+TGUI/Widgets/ListView.hpp
+-
+TGUI/Clipping.hpp
+-
+cmath
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/MenuBar.cpp
+TGUI/Widgets/MenuBar.hpp
+-
+TGUI/Container.hpp
+-
+TGUI/Clipping.hpp
+-
+SFML/Graphics/ConvexShape.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/MessageBox.cpp
+TGUI/Widgets/MessageBox.hpp
+-
+TGUI/SignalImpl.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/Panel.cpp
+TGUI/Widgets/Panel.hpp
+-
+TGUI/Clipping.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/Picture.cpp
+TGUI/Widgets/Picture.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/ProgressBar.cpp
+TGUI/Widgets/ProgressBar.hpp
+-
+TGUI/Clipping.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/RadioButton.cpp
+TGUI/Widgets/RadioButton.hpp
+-
+TGUI/Container.hpp
+-
+SFML/Graphics/CircleShape.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/RadioButtonGroup.cpp
+TGUI/Widgets/RadioButtonGroup.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/RangeSlider.cpp
+TGUI/Widgets/RangeSlider.hpp
+-
+cmath
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/ScrollablePanel.cpp
+TGUI/Widgets/ScrollablePanel.hpp
+-
+TGUI/Vector2f.hpp
+-
+TGUI/Clipping.hpp
+-
+TGUI/SignalImpl.hpp
+-
+cmath
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/Scrollbar.cpp
+TGUI/Widgets/Scrollbar.hpp
+-
+SFML/Graphics/ConvexShape.hpp
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/Slider.cpp
+TGUI/Widgets/Slider.hpp
+-
+cmath
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/SpinButton.cpp
+TGUI/Widgets/SpinButton.hpp
+-
+SFML/Graphics/ConvexShape.hpp
+-
+SFML/Graphics/RectangleShape.hpp
+-
+cmath
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/Tabs.cpp
+TGUI/Widgets/Tabs.hpp
+-
+TGUI/Clipping.hpp
+-
+optional
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/TextBox.cpp
+TGUI/Clipboard.hpp
+-
+TGUI/Widgets/Scrollbar.hpp
+-
+TGUI/Widgets/TextBox.hpp
+-
+TGUI/Clipping.hpp
+-
+cmath
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/TreeView.cpp
+TGUI/Widgets/TreeView.hpp
+-
+TGUI/Clipping.hpp
+-
+cmath
+-
+
+/home/user/Bureau/mario bros/libs/TGUI/src/TGUI/Widgets/VerticalLayout.cpp
+TGUI/Widgets/VerticalLayout.hpp
+-
+numeric
+-
+
+/usr/local/include/SFML/Config.hpp
+TargetConditionals.h
+/usr/local/include/SFML/TargetConditionals.h
+
+/usr/local/include/SFML/Graphics/BlendMode.hpp
+SFML/Graphics/Export.hpp
+-
+
+/usr/local/include/SFML/Graphics/CircleShape.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/Shape.hpp
+-
+
+/usr/local/include/SFML/Graphics/Color.hpp
+SFML/Graphics/Export.hpp
+-
+
+/usr/local/include/SFML/Graphics/ConvexShape.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/Shape.hpp
+-
+vector
+-
+
+/usr/local/include/SFML/Graphics/Drawable.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/RenderStates.hpp
+-
+
+/usr/local/include/SFML/Graphics/Export.hpp
+SFML/Config.hpp
+-
+
+/usr/local/include/SFML/Graphics/Font.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/Glyph.hpp
+-
+SFML/Graphics/Texture.hpp
+-
+SFML/Graphics/Rect.hpp
+-
+SFML/System/Vector2.hpp
+-
+SFML/System/String.hpp
+-
+map
+-
+string
+-
+vector
+-
+
+/usr/local/include/SFML/Graphics/Glsl.hpp
+SFML/Graphics/Transform.hpp
+-
+SFML/Graphics/Color.hpp
+-
+SFML/System/Vector2.hpp
+-
+SFML/System/Vector3.hpp
+-
+SFML/Graphics/Glsl.inl
+-
+
+/usr/local/include/SFML/Graphics/Glsl.inl
+
+/usr/local/include/SFML/Graphics/Glyph.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/Rect.hpp
+-
+
+/usr/local/include/SFML/Graphics/Image.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/Color.hpp
+-
+SFML/Graphics/Rect.hpp
+-
+string
+-
+vector
+-
+
+/usr/local/include/SFML/Graphics/PrimitiveType.hpp
+
+/usr/local/include/SFML/Graphics/Rect.hpp
+SFML/System/Vector2.hpp
+-
+algorithm
+-
+SFML/Graphics/Rect.inl
+-
+
+/usr/local/include/SFML/Graphics/Rect.inl
+
+/usr/local/include/SFML/Graphics/RectangleShape.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/Shape.hpp
+-
+
+/usr/local/include/SFML/Graphics/RenderStates.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/BlendMode.hpp
+-
+SFML/Graphics/Transform.hpp
+-
+
+/usr/local/include/SFML/Graphics/RenderTarget.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/Color.hpp
+-
+SFML/Graphics/Rect.hpp
+-
+SFML/Graphics/View.hpp
+-
+SFML/Graphics/Transform.hpp
+-
+SFML/Graphics/BlendMode.hpp
+-
+SFML/Graphics/RenderStates.hpp
+-
+SFML/Graphics/PrimitiveType.hpp
+-
+SFML/Graphics/Vertex.hpp
+-
+SFML/System/NonCopyable.hpp
+-
+
+/usr/local/include/SFML/Graphics/RenderTexture.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/Texture.hpp
+-
+SFML/Graphics/RenderTarget.hpp
+-
+SFML/Window/ContextSettings.hpp
+-
+
+/usr/local/include/SFML/Graphics/RenderWindow.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/RenderTarget.hpp
+-
+SFML/Graphics/Image.hpp
+-
+SFML/Window/Window.hpp
+-
+string
+-
+
+/usr/local/include/SFML/Graphics/Shader.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/Glsl.hpp
+-
+SFML/Window/GlResource.hpp
+-
+SFML/System/NonCopyable.hpp
+-
+SFML/System/Vector2.hpp
+-
+SFML/System/Vector3.hpp
+-
+map
+-
+string
+-
+
+/usr/local/include/SFML/Graphics/Shape.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/Drawable.hpp
+-
+SFML/Graphics/Transformable.hpp
+-
+SFML/Graphics/VertexArray.hpp
+-
+SFML/System/Vector2.hpp
+-
+
+/usr/local/include/SFML/Graphics/Sprite.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/Drawable.hpp
+-
+SFML/Graphics/Transformable.hpp
+-
+SFML/Graphics/Vertex.hpp
+-
+SFML/Graphics/Rect.hpp
+-
+
+/usr/local/include/SFML/Graphics/Text.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/Drawable.hpp
+-
+SFML/Graphics/Transformable.hpp
+-
+SFML/Graphics/Font.hpp
+-
+SFML/Graphics/Rect.hpp
+-
+SFML/Graphics/VertexArray.hpp
+-
+SFML/System/String.hpp
+-
+string
+-
+vector
+-
+
+/usr/local/include/SFML/Graphics/Texture.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/Image.hpp
+-
+SFML/Window/GlResource.hpp
+-
+
+/usr/local/include/SFML/Graphics/Transform.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/Rect.hpp
+-
+SFML/System/Vector2.hpp
+-
+
+/usr/local/include/SFML/Graphics/Transformable.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/Transform.hpp
+-
+
+/usr/local/include/SFML/Graphics/Vertex.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/Color.hpp
+-
+SFML/System/Vector2.hpp
+-
+
+/usr/local/include/SFML/Graphics/VertexArray.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/Vertex.hpp
+-
+SFML/Graphics/PrimitiveType.hpp
+-
+SFML/Graphics/Rect.hpp
+-
+SFML/Graphics/Drawable.hpp
+-
+vector
+-
+
+/usr/local/include/SFML/Graphics/View.hpp
+SFML/Graphics/Export.hpp
+-
+SFML/Graphics/Rect.hpp
+-
+SFML/Graphics/Transform.hpp
+-
+SFML/System/Vector2.hpp
+-
+
+/usr/local/include/SFML/System/Clock.hpp
+SFML/System/Export.hpp
+-
+SFML/System/Time.hpp
+-
+
+/usr/local/include/SFML/System/Err.hpp
+SFML/System/Export.hpp
+-
+ostream
+-
+
+/usr/local/include/SFML/System/Export.hpp
+SFML/Config.hpp
+-
+
+/usr/local/include/SFML/System/NativeActivity.hpp
+SFML/System/Export.hpp
+-
+
+/usr/local/include/SFML/System/NonCopyable.hpp
+SFML/System/Export.hpp
+-
+
+/usr/local/include/SFML/System/String.hpp
+SFML/System/Export.hpp
+-
+SFML/System/Utf.hpp
+-
+iterator
+-
+locale
+-
+string
+-
+SFML/System/String.inl
+-
+
+/usr/local/include/SFML/System/String.inl
+
+/usr/local/include/SFML/System/Time.hpp
+SFML/System/Export.hpp
+-
+
+/usr/local/include/SFML/System/Utf.hpp
+SFML/Config.hpp
+-
+algorithm
+-
+locale
+-
+string
+-
+cstdlib
+-
+SFML/System/Utf.inl
+-
+
+/usr/local/include/SFML/System/Utf.inl
+
+/usr/local/include/SFML/System/Vector2.hpp
+SFML/System/Vector2.inl
+-
+
+/usr/local/include/SFML/System/Vector2.inl
+
+/usr/local/include/SFML/System/Vector3.hpp
+SFML/System/Vector3.inl
+-
+
+/usr/local/include/SFML/System/Vector3.inl
+
+/usr/local/include/SFML/Window/Clipboard.hpp
+SFML/Window/Export.hpp
+-
+SFML/System/String.hpp
+-
+
+/usr/local/include/SFML/Window/ContextSettings.hpp
+SFML/Config.hpp
+-
+
+/usr/local/include/SFML/Window/Cursor.hpp
+SFML/Window/Export.hpp
+-
+SFML/System/NonCopyable.hpp
+-
+SFML/System/Vector2.hpp
+-
+
+/usr/local/include/SFML/Window/Event.hpp
+SFML/Config.hpp
+-
+SFML/Window/Joystick.hpp
+-
+SFML/Window/Keyboard.hpp
+-
+SFML/Window/Mouse.hpp
+-
+SFML/Window/Sensor.hpp
+-
+
+/usr/local/include/SFML/Window/Export.hpp
+SFML/Config.hpp
+-
+
+/usr/local/include/SFML/Window/GlResource.hpp
+SFML/Window/Export.hpp
+-
+SFML/System/NonCopyable.hpp
+-
+
+/usr/local/include/SFML/Window/Joystick.hpp
+SFML/Window/Export.hpp
+-
+SFML/System/String.hpp
+-
+
+/usr/local/include/SFML/Window/Keyboard.hpp
+SFML/Window/Export.hpp
+-
+
+/usr/local/include/SFML/Window/Mouse.hpp
+SFML/Window/Export.hpp
+-
+SFML/System/Vector2.hpp
+-
+
+/usr/local/include/SFML/Window/Sensor.hpp
+SFML/Window/Export.hpp
+-
+SFML/System/Vector3.hpp
+-
+SFML/System/Time.hpp
+-
+
+/usr/local/include/SFML/Window/VideoMode.hpp
+SFML/Window/Export.hpp
+-
+vector
+-
+
+/usr/local/include/SFML/Window/Window.hpp
+SFML/Window/ContextSettings.hpp
+-
+SFML/Window/Cursor.hpp
+-
+SFML/Window/Export.hpp
+-
+SFML/Window/GlResource.hpp
+-
+SFML/Window/VideoMode.hpp
+-
+SFML/Window/WindowHandle.hpp
+-
+SFML/Window/WindowStyle.hpp
+-
+SFML/System/Clock.hpp
+-
+SFML/System/NonCopyable.hpp
+-
+SFML/System/String.hpp
+-
+SFML/System/Vector2.hpp
+-
+
+/usr/local/include/SFML/Window/WindowHandle.hpp
+SFML/Config.hpp
+-
+
+/usr/local/include/SFML/Window/WindowStyle.hpp
+
