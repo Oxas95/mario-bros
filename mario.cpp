@@ -6,12 +6,17 @@
 #include "menu.hpp"
 #include "texture.hpp"
 
+#include <unistd.h>
+
 using namespace std;
 
 int main(){
 	
 	cout << "Chargement des textures" << endl;
 	textures::loadTextures();
+	
+	sleep(1);
+	
 	Fenetre w;
 	
 	call_menu(w);

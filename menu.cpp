@@ -3,18 +3,16 @@
 #include "global.hpp"
 #include "texture.hpp"
 
-#include <unistd.h>
-
 namespace menu{
 	
 void affiche_textures(Fenetre& w){
 	
 	w.clear(skyColor);
 	w.drawSpriteCases(5,3,textures::logo);
-	w.writeCases("Play a Game",11,16);
+	w.writeCases("Play a Game",11,17);
 	w.writeCases("Make a Game",11,19);
-	w.writeCases("Settings",11,22);
-	w.writeCases("Exit",11,22);
+	w.writeCases("Settings",11,21);
+	w.writeCases("Exit",11,23);
 }
 	
 }//namespace menu
