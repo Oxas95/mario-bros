@@ -1,12 +1,14 @@
-ISFML = -I/usr/local/SFML/include
-LSFML = -lsfml-graphics -lsfml-window -lsfml-system -L/usr/local/SFML/lib
-RSFML = export LD_LIBRARY_PATH=/usr/local/SFML/lib &&
+ISFML = -I/usr/local/include
+LSFML = -lsfml-graphics -lsfml-window -lsfml-system -L/usr/local/lib
+RSFML = export LD_LIBRARY_PATH=/usr/local/lib &&
 
-ficCpp = mario.cpp
-ficH   = 
-ficO   = mario.o
+ficCpp = mario.cpp	texture.cpp	Collision.cpp	fenetre.cpp				menu.cpp	
+ficH   = 			texture.hpp	Collision.hpp	fenetre.hpp	global.hpp	menu.hpp	
+ficO   = mario.o	texture.o	Collision.o		fenetre.o				menu.o		
 
-all: mario run
+default: reset mario
+
+all: reset mario clear run
 
 run:
 	$(RSFML) ./mario
@@ -17,15 +19,27 @@ debug:
 reset:
 	reset
 
-mario: reset $(ficO)
-	g++ -g -Wall $(ficO) $(LSFML) -o mario
+clear:
+	clear
+
+mario: $(ficO) global.hpp
+	g++ -g -Wall global.hpp $(ficO) $(LSFML) -o mario
 	rm -f *.gch
 
-mario.o: mario.cpp
+Collision.o: Collision.cpp Collision.hpp
+	g++ -c -g -Wall Collision.cpp Collision.hpp $(ISFML)
+
+fenetre.o: fenetre.cpp fenetre.hpp global.hpp texture.hpp
+	g++ -c -g -Wall fenetre.cpp fenetre.hpp $(ISFML)
+
+mario.o: mario.cpp global.hpp menu.hpp fenetre.hpp texture.hpp
 	g++ -c -g -Wall mario.cpp $(ISFML)
 
-Collision.o: Collision.cpp Collision.h
-	g++ -c -g -Wall Collision.cpp Collision.h $(ISFML)
+menu.o: menu.cpp menu.hpp global.hpp texture.hpp
+	g++ -c -g -Wall menu.cpp menu.hpp $(ISFML)
+
+texture.o: texture.cpp texture.hpp fenetre.hpp
+	g++ -c -g -Wall texture.cpp texture.hpp $(ISFML)
 
 clean:
 	rm -fR *.o mario *.gch
