@@ -24,7 +24,7 @@ void affiche_textures(Fenetre& w){
 using namespace menu;
 
 int menu_selection(Fenetre& w){
-	int res = 0;
+	static int res = 0;
 	bool continuer = true;
 	bool pressed;
 	sf::Keyboard::Key k;
@@ -45,7 +45,7 @@ int menu_selection(Fenetre& w){
 			}
 		}
 		else if(k == sf::Keyboard::Return) continuer = false;
-		else if(w.isOpen() == false || res == 4) res = 0, continuer = false;
+		else if(w.isOpen() == false) res = 3, continuer = false;
 		elseif_buttonResize();
 		
 		w.writeCases("$",11,2);
@@ -58,17 +58,19 @@ int menu_selection(Fenetre& w){
 
 void call_menu(Fenetre& w){
 	bool continuer = true;
-	int res;
+	static int res = 2;
 	while(continuer){
 		res = menu_selection(w);
 		
-		if(res == 1){
+		printf("choisit : %d\n",res);
+		
+		if(res == 0){
 			//play
 		}
-		else if(res == 2){
+		else if(res == 1){
 			//make
 		}
-		else if(res == 3){
+		else if(res == 2){
 			//parametres
 		}
 		else continuer = false;
