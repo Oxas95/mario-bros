@@ -9,10 +9,14 @@ void affiche_textures(Fenetre& w){
 	
 	w.clear(skyColor);
 	w.drawSpriteCases(5,3,textures::logo);
+	w.writeCases("@ 2019 Kino",16,14);
 	w.writeCases("Play a Game",11,17);
 	w.writeCases("Make a Game",11,19);
 	w.writeCases("Settings",11,21);
 	w.writeCases("Exit",11,23);
+	
+	w.writeCases("Mario          World  Time",3,1);
+	w.writeCases("000000  .*00    1-1",3,2);
 }
 	
 }//namespace menu
@@ -24,20 +28,28 @@ int menu_selection(Fenetre& w){
 	bool continuer = true;
 	bool pressed;
 	sf::Keyboard::Key k;
-	int choix;
 	affiche_textures(w);
 	while(continuer){
 		k = w.getKey(pressed);
 		
-		if	   (k == sf::Keyboard::Up){
-			
+		if	   (k == sf::Keyboard::Up && pressed){
+			if(res > 0){
+				w.writeCases(" ",9,17 + res * 2);
+				res--;
+			}
 		}
-		else if(k == sf::Keyboard::Down){
-			
+		else if(k == sf::Keyboard::Down && pressed){
+			if(res < 3){
+				w.writeCases(" ",9,17 + res * 2);
+				res++;
+			}
 		}
 		else if(k == sf::Keyboard::Return) continuer = false;
 		else if(w.isOpen() == false || res == 4) res = 0, continuer = false;
 		elseif_buttonResize();
+		
+		w.writeCases("$",11,2);
+		w.drawSpriteCases(9,17 + res * 2,textures::goobaMenu);
 		
 		w.display();
 	}

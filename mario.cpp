@@ -15,6 +15,9 @@ int main(){
 	cout << "Chargement des textures" << endl;
 	textures::loadTextures();
 	
+	sf::Thread thread(&textures::funcGif);
+	thread.launch();
+	
 	sleep(1);
 	
 	Fenetre w;

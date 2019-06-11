@@ -8,7 +8,7 @@
 using namespace std;
 
 Fenetre::Fenetre(){
-	zoom_cases = 1;
+	zoom_cases = 2;
 
 	settings.depthBits = 0;
 	settings.stencilBits = 0;
@@ -25,6 +25,7 @@ void Fenetre::resize(const short zoom){
 	if(window) window->close();
 	if(zoom > 0){
 		zoom_cases = zoom;
+		printf("zoom : %d\n",zoom_cases);
 		this->largeur = sizeof(cases) * zoom_cases * nbCasesX;
 		this->hauteur = sizeof(cases) * zoom_cases * nbCasesY;
 		window = new sf::RenderWindow(sf::VideoMode(largeur, hauteur), "Super Mario Bros NES", sf::Style::Titlebar | sf::Style::Close, settings);
@@ -105,28 +106,22 @@ bool Fenetre::write(const char* str, int police, sf::Color color, int x, int y){
 }
 
 void Fenetre::writeCases(const char* str,int x, int y){
-	int size_str = strlen(str);
-	int i;
-	for (i = 0; i < size_str; i++){
-		drawSpriteCases(x,y,textures::lettres[textures::getSpriteChar(str[i])]);
-		x++;
-	}
+	writeCases(str,sf::Vector2f(x,y));
 }
 
 void Fenetre::writeCases(const char* str,sf::Vector2i pos){
-	int size_str = strlen(str);
-	int i;
-	for (i = 0; i < size_str; i++){
-		drawSpriteCases(pos,textures::lettres[textures::getSpriteChar(str[i])]);
-		pos.x++;
-	}
+	writeCases(str,pos.x,pos.y);
 }
 
 void Fenetre::writeCases(const char* str,sf::Vector2f pos){
 	int size_str = strlen(str);
 	int i;
 	for (i = 0; i < size_str; i++){
-		drawSpriteCases(pos,textures::lettres[textures::getSpriteChar(str[i])]);
+		if(str[i] == '$'){
+			drawSpriteCases(pos,textures::nombrePieces);
+		}
+		else 
+			drawSpriteCases(pos,textures::lettres[textures::getSpriteChar(str[i])]);
 		pos.x++;
 	}
 }
@@ -198,9 +193,10 @@ void Fenetre::drawSpriteCases(sf::Vector2i posSprite, sf::Sprite& sprite){
 }
 
 void Fenetre::drawSpriteCases(sf::Vector2f posSprite, sf::Sprite& sprite){
-	posSprite.x *= sizeof(cases);
-	posSprite.y *= sizeof(cases);
+	posSprite.x *= sizeof(cases) * zoom_cases;
+	posSprite.y *= sizeof(cases) * zoom_cases;
 	sprite.setPosition(posSprite);
+	sprite.setScale(zoom_cases, zoom_cases);
 	window->draw(sprite);
 }
 

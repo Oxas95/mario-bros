@@ -22,7 +22,7 @@ reset:
 clear:
 	clear
 
-mario: $(ficO) global.hpp
+mario: $(ficO) $(ficH)
 	g++ -g -Wall global.hpp $(ficO) $(LSFML) -o mario
 	rm -f *.gch
 

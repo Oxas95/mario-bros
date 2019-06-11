@@ -14,9 +14,16 @@ class textures{
 		static sf::Sprite logo;
 		static sf::Texture Tlogo;
 		
-		static sf::Sprite vide;
+		static sf::Sprite nombrePieces;
+		static sf::Texture TnombrePieces[5];
+		
+		static sf::Sprite goobaMenu;
+		static sf::Texture TgoobaMenu;
 	
 		static void load_sprite(sf::Sprite &s, sf::Texture &t, const char* path);
+		static void load_texture(sf::Texture &texture, const char* path);
+		static void load_sprite(sf::Sprite &sprite, sf::Texture &texture);
+		static void funcGif();
 		static void loadTextures();
 		static int getSpriteChar(char);
 		
@@ -24,7 +31,7 @@ class textures{
 		static void loadSpriteChar();
 		static void loadSpritePetitMario();
 		static void loadSpriteJourBlock();
-		static void loadSpriteLogo();
+		static void loadSpriteJour();
 };
 
 #endif //texture_hpp
