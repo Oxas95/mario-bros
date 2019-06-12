@@ -7,50 +7,49 @@
 
 using namespace std;
 
-sf::Sprite textures::lettres[26+10+4+1];
-
-sf::Texture textures::Tlettres[26+10+4+1];
+sf::Sprite textures::lettres[26+10+4+1];   //lettres + chiffres + caracteres speciaux + vide
+sf::Texture textures::Tlettres[26+10+4+1]; //lettres + chiffres + caracteres speciaux + vide
 
 sf::Sprite textures::logo;
 sf::Texture textures::Tlogo;
 
 sf::Sprite textures::nombrePieces;
-sf::Texture textures::TnombrePieces[5];
+sf::Texture textures::TnombrePieces[5];    //gif
 
 sf::Sprite textures::goobaMenu;
 sf::Texture textures::TgoobaMenu;
 
-sf::Sprite textures::colline[2];
-sf::Texture textures::Tcolline[2];
+sf::Sprite textures::colline[2];           //size
+sf::Texture textures::Tcolline[2];         //size
 
-sf::Sprite textures::nuage[3];
-sf::Texture textures::Tnuage[3];
+sf::Sprite textures::nuage[3];             //size
+sf::Texture textures::Tnuage[3];           //size
 
-sf::Sprite textures::buisson[3];
-sf::Texture textures::Tbuisson[3];
+sf::Sprite textures::buisson[3];           //size
+sf::Texture textures::Tbuisson[3];         //size
 
-sf::Sprite textures::ground[4];
-sf::Texture textures::Tground[4];
+sf::Sprite textures::ground[4];            //area
+sf::Texture textures::Tground[4];          //area
 
-sf::Sprite textures::block[4];
-sf::Texture textures::Tblock[4];
+sf::Sprite textures::block[4];             //area
+sf::Texture textures::Tblock[4];           //area
 
-sf::Sprite textures::brick[4];
-sf::Texture textures::Tbrick[4];
+sf::Sprite textures::brick[4];             //area
+sf::Texture textures::Tbrick[4];           //area
 
-sf::Sprite textures::block_coin[4];
-sf::Texture textures::Tblock_coin[4][5];
+sf::Sprite textures::block_coin[4];        //area
+sf::Texture textures::Tblock_coin[4][5];   //area, gif
 
-sf::Sprite textures::coin[4];
-sf::Texture textures::Tcoin[4][5];
+sf::Sprite textures::coin[4];              //area
+sf::Texture textures::Tcoin[4][5];         //area, gif
 
 sf::Sprite textures::mario;
 
-sf::Texture textures::TmarioStop[3][2];
-sf::Texture textures::TmarioRun[3][2][4];
+sf::Texture textures::TmarioStop[3][2];   //size of mario, rotation
+sf::Texture textures::TmarioRun[3][2][4]; //size of mario, rotation, gif
 sf::Texture textures::TmarioDead;
-sf::Texture textures::TmarioJump[3][2];
-sf::Texture textures::TmarioTurn[3][2];
+sf::Texture textures::TmarioJump[3][2];   //size of mario, rotation
+sf::Texture textures::TmarioTurn[3][2];   //size of mario, rotation
 
 void textures::loadSpriteChar(){
 	int i;
@@ -172,26 +171,58 @@ void textures::load_sprite(sf::Sprite &sprite, sf::Texture &texture){
 	sprite.setPosition(sf::Vector2f(0, 0));
 }
 
+void textures::funcMarioMove(Fenetre &w){
+	sf::Clock chrono;
+	sf::Time t = sf::milliseconds(150);
+	sf::Time elapsed;
+	
+	bool jump = false;
+	bool run = false;
+	short rotation = 1;
+	short sizeMario = 0;
+	int i = 0;
+	
+	sf::Keyboard::Key k;
+	bool pressed;
+	
+	while(1){
+		k = w.getKey(pressed);
+		elapsed = chrono.getElapsedTime();
+		if(k == sf::Keyboard::Space && pressed && !jump){
+			jump = true;
+		}
+		if(!run) i = 4;
+		if(run){
+			if(elapsed.asMilliseconds() >= t.asMilliseconds()){
+				i++;
+				if(i > 4) i = 0;
+				load_sprite(mario,TmarioRun[sizeMario][rotation][i]);
+				chrono.restart();
+			}
+		}
+	}
+}
+
 void textures::funcGif(){
 	sf::Clock chrono;
 	sf::Time t = sf::milliseconds(150);
 	sf::Time elapsed;
 	chrono.restart();
-	int i = 1,j;
+	int i = 0,j;
 	while(1){
 		elapsed = chrono.getElapsedTime();
 		if(elapsed.asMilliseconds() >= t.asMilliseconds()){
+			i++;
+			if(i > 4) i = 0;
 			load_sprite(nombrePieces,TnombrePieces[i]);
 			for(j = 0; j < 4; j++){
 				load_sprite(block_coin[j],Tblock_coin[j][i]);
 				load_sprite(coin[j],Tcoin[j][i]);
 			}
-			i++;
-			if(i > 4) i = 0;
 			chrono.restart();
 		}
 	}
-} 
+}
 
 void textures::loadTextures(){
 	loadSpriteChar();

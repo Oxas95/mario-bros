@@ -54,6 +54,7 @@ class textures{
 		static void load_sprite(sf::Sprite &s, sf::Texture &t, const char* path);
 		static void load_texture(sf::Texture &texture, const char* path);
 		static void load_sprite(sf::Sprite &sprite, sf::Texture &texture);
+		static void funcMarioMove(Fenetre &w);
 		static void funcGif();
 		static void loadTextures();
 		static int getSpriteChar(char);
