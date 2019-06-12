@@ -6,9 +6,12 @@
 namespace menu{
 	
 void affiche_textures(Fenetre& w){
-	
+	int i;
 	w.clear(skyColor);
 	w.drawSpriteCases(5,3,textures::logo);
+	w.drawSpriteCases(0,20,textures::colline[1]);
+	w.drawSpriteCases(23,23,textures::buisson[2]);
+	w.drawSpriteCases(5,23,textures::mario);
 	w.writeCases("@ 2019 Kino",16,14);
 	w.writeCases("Play a Game",11,17);
 	w.writeCases("Make a Game",11,19);
@@ -17,6 +20,12 @@ void affiche_textures(Fenetre& w){
 	
 	w.writeCases("Mario          World  Time",3,1);
 	w.writeCases("000000  .*00    1-1",3,2);
+	
+	for (i = 0; i < nbBigCasesX * 2; i += 2){
+		w.drawSpriteCases(i, 25, textures::ground[0]);
+		w.drawSpriteCases(i, 27, textures::ground[0]);
+	}
+	
 }
 	
 }//namespace menu
