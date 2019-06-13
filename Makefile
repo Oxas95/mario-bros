@@ -2,9 +2,9 @@ ISFML = -I/usr/local/include
 LSFML = -lsfml-graphics -lsfml-window -lsfml-system -L/usr/local/lib
 RSFML = export LD_LIBRARY_PATH=/usr/local/lib &&
 
-ficCpp = mario.cpp	texture.cpp	Collision.cpp	fenetre.cpp				menu.cpp	play.cpp	
-ficH   = 			texture.hpp	Collision.hpp	fenetre.hpp	global.hpp	menu.hpp	play.hpp	
-ficO   = mario.o	texture.o	Collision.o		fenetre.o				menu.o		play.o		
+ficCpp = mario.cpp	texture.cpp	Collision.cpp	fenetre.cpp				menu.cpp	play.cpp	Block.cpp	
+ficH   = 			texture.hpp	Collision.hpp	fenetre.hpp	global.hpp	menu.hpp	play.hpp	Block.hpp	
+ficO   = mario.o	texture.o	Collision.o		fenetre.o				menu.o		play.o		Block.o		
 
 default: reset mario
 
@@ -25,6 +25,9 @@ clear:
 mario: $(ficO)
 	g++ -g -Wall global.hpp $(ficO) $(LSFML) -o mario
 	rm -f *.gch
+
+Block.o: Block.cpp Block.hpp fenetre.hpp texture.hpp
+	g++ -c -g -Wall Block.cpp Block.hpp $(ISFML)
 
 carte.o: carte.cpp carte.hpp
 	g++ -c -g -Wall carte.cpp carte.hpp $(ISFML)

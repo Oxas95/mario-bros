@@ -10,6 +10,8 @@ class textures{
 		static sf::Sprite lettres[26+10+4+1];
 		static sf::Texture Tlettres[26+10+4+1];
 		
+		static sf::Sprite vide;
+		
 		static sf::Sprite logo;
 		static sf::Texture Tlogo;
 		

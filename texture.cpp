@@ -7,8 +7,10 @@
 
 using namespace std;
 
-sf::Sprite textures::lettres[26+10+4+1];   //lettres + chiffres + caracteres speciaux + vide
-sf::Texture textures::Tlettres[26+10+4+1]; //lettres + chiffres + caracteres speciaux + vide
+sf::Sprite textures::lettres[26+10+4+1];   //lettres + chiffres + caracteres speciaux + sprite sans image
+sf::Texture textures::Tlettres[26+10+4+1]; //lettres + chiffres + caracteres speciaux + Tvide (pour le sprite sf::Sprite vide ligne 13)
+
+sf::Sprite textures::vide;
 
 sf::Sprite textures::logo;
 sf::Texture textures::Tlogo;
@@ -75,7 +77,7 @@ void textures::loadSpriteChar(){
 	load_sprite(lettres[i],Tlettres[i],"sprites/lettres/-.png"); i++;
 	load_sprite(lettres[i],Tlettres[i],"sprites/lettres/!.png"); i++;
 	load_sprite(lettres[i],Tlettres[i],"sprites/lettres/co.png"); i++;
-	load_sprite(lettres[i],Tlettres[i],"sprites/vide.png"); i++;
+	load_sprite(vide,Tlettres[i],"sprites/vide.png");
 }
 
 void textures::loadSpriteBackground(){

@@ -43,13 +43,13 @@ int menu_selection(Fenetre& w){
 		
 		if	   (k == sf::Keyboard::Up && pressed){
 			if(res > 0){
-				w.writeCases(" ",9,17 + res * 2);
+				w.drawSpriteCases(9,17 + res * 2, textures::vide);
 				res--;
 			}
 		}
 		else if(k == sf::Keyboard::Down && pressed){
 			if(res < 3){
-				w.writeCases(" ",9,17 + res * 2);
+				w.drawSpriteCases(9,17 + res * 2, textures::vide);
 				res++;
 			}
 		}
