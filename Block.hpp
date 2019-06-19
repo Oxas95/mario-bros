@@ -12,7 +12,7 @@ class Block{
 	public :
 		Block(sf::Vector2i position);
 		Block(int x, int y);
-		~Block();
+		virtual ~Block();
 		sf::Vector2i getPosition();
 		void drawAt(Fenetre&, int x, int y);
 		void drawAtCases(Fenetre&, int x, int y);

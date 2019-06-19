@@ -10,8 +10,6 @@ Block::Block(sf::Vector2i pos) : sprite(textures::lettres[textures::getSpriteCha
 
 Block::Block(int x, int y) : sprite(textures::lettres[textures::getSpriteChar(' ')]), position(x, y) {}
 
-Block::~Block() {}
-
 sf::Vector2i Block::getPosition(){
 	return position;
 }

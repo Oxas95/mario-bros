@@ -1,5 +1,5 @@
 #include "carte.hpp"
-#include "global.h"
+#include "global.hpp"
 
 Carte::Carte(){
     usingArray = false;
@@ -14,21 +14,18 @@ Carte::Carte(const char* path){
 }
 
 Carte::~Carte(){
-    int i;
+    int i,j;
     if(usingArray){
         for(i = 0; i < size; i++){
+            for(j = 0; j < nbCasesY; j++)   delete tab_carte[i][j];
             delete [] tab_carte[i];
         }
         delete [] tab_carte;
     }
-    else {
-        for(i = 0; i < size; i++){
-            while (debut){
-                delete [] debut.tab;
-                debut = debut->next;            
-            }
-        }
-    }
+    else 
+        for(i = 0; i < size; i++)
+            while (debut)
+                suppColonne();
 }
 
 bool Carte::ajoutBlock(Block* b, int x, int y){

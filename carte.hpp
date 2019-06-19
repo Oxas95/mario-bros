@@ -27,7 +27,7 @@ class Carte{
 		Colonne* debut;
 		string nomMonde;
 		string nomCarte;
-		Block** tab_carte;
+		Block*** tab_carte;
 		int size;
 		bool usingArray;
 	
