@@ -9,14 +9,17 @@
 using namespace std;
 
 typedef struct colonne_carte{
-	Block* tab[14];
+	Block* tab[nbCasesY];
 	struct colonne_carte* next;
 } Colonne;
 
-typedef enum {
-	editeur,
-	jeu
-} mod_carte;
+typedef enum{
+	day,
+	night,
+	under,
+	castle,
+	water
+}areaType;
 
 class Carte{
 	private :
@@ -24,12 +27,18 @@ class Carte{
 		Colonne* debut;
 		string nomMonde;
 		string nomCarte;
-		Block* tab_carte[14];
+		Block** tab_carte;
 		int size;
+		bool usingArray;
 	
 	public :
-		Carte(mod_carte mc);
+		Carte();
+		Carte(const char* path);
 		~Carte();
+		bool ajoutBlock(Block*, int x, int y);
+		bool suppBlock(int x, int y);
+		void ajoutColonne();
+		void suppColonne();
 };
 
 #endif //carte_hpp
