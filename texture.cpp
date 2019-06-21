@@ -47,11 +47,11 @@ sf::Texture textures::Tcoin[4][5];         //area, gif
 
 sf::Sprite textures::mario;
 
-sf::Texture textures::TmarioStop[3][2];   //size of mario, rotation
-sf::Texture textures::TmarioRun[3][2][4]; //size of mario, rotation, gif
+sf::Texture textures::TmarioStop[3];   //size of mario
+sf::Texture textures::TmarioRun[3][4]; //size of mario, gif
 sf::Texture textures::TmarioDead;
-sf::Texture textures::TmarioJump[3][2];   //size of mario, rotation
-sf::Texture textures::TmarioTurn[3][2];   //size of mario, rotation
+sf::Texture textures::TmarioJump[3];   //size of mario
+sf::Texture textures::TmarioTurn[3];   //size of mario
 
 void textures::loadSpriteChar(){
 	int i;
@@ -94,24 +94,18 @@ void textures::loadSpriteBackground(){
 }
 
 void textures::loadSpritePetitMario(){
-	load_texture(TmarioStop[0][0],"sprites/mario/petit/stopL.png");
-	load_texture(TmarioStop[0][1],"sprites/mario/petit/stopR.png");
+	load_texture(TmarioStop[0],"sprites/mario/petit/stop.png");
 	
-	load_texture(TmarioJump[0][0],"sprites/mario/petit/jumpL.png");
-	load_texture(TmarioJump[0][1],"sprites/mario/petit/jumpR.png");
+	load_texture(TmarioJump[0],"sprites/mario/petit/jump.png");
 	
-	load_texture(TmarioTurn[0][0],"sprites/mario/petit/turnL.png");
-	load_texture(TmarioTurn[0][1],"sprites/mario/petit/turnR.png");
+	load_texture(TmarioTurn[0],"sprites/mario/petit/turn.png");
 	
-	load_texture(TmarioRun[0][0][0],"sprites/mario/petit/sprint1L.png");
-	load_texture(TmarioRun[0][0][1],"sprites/mario/petit/sprint2L.png");
-	load_texture(TmarioRun[0][0][2],"sprites/mario/petit/sprint3L.png");
-	load_texture(TmarioRun[0][0][3],"sprites/mario/petit/sprint4L.png");
-	load_texture(TmarioRun[0][1][0],"sprites/mario/petit/sprint1R.png");
-	load_texture(TmarioRun[0][1][1],"sprites/mario/petit/sprint2R.png");
-	load_texture(TmarioRun[0][1][2],"sprites/mario/petit/sprint3R.png");
-	load_texture(TmarioRun[0][1][3],"sprites/mario/petit/sprint4R.png");
-	load_sprite(mario,TmarioStop[0][1]);
+	load_texture(TmarioRun[0][0],"sprites/mario/petit/sprint1.png");
+	load_texture(TmarioRun[0][1],"sprites/mario/petit/sprint2.png");
+	load_texture(TmarioRun[0][2],"sprites/mario/petit/sprint3.png");
+	load_texture(TmarioRun[0][3],"sprites/mario/petit/sprint4.png");
+	
+	load_sprite(mario,TmarioStop[0]); //initialisation de mario a stop
 }
 
 void textures::loadSpriteDayBlock(){
@@ -173,34 +167,38 @@ void textures::load_sprite(sf::Sprite &sprite, sf::Texture &texture){
 	sprite.setPosition(sf::Vector2f(0, 0));
 }
 
-void textures::funcMarioMove(Fenetre &w){
+void textures::funcMarioMove(Fenetre* w){
 	sf::Clock chrono;
 	sf::Time t = sf::milliseconds(150);
 	sf::Time elapsed;
 	
 	bool jump = false;
 	bool run = false;
-	short rotation = 1;
 	short sizeMario = 0;
 	int i = 0;
 	
-	sf::Keyboard::Key k;
-	bool pressed;
+	sf::Keyboard::Key k = sf::Keyboard::Unknown;
+	bool pressed = false;
 	
 	while(1){
-		k = w.getKey(pressed);
+		//k = w->getKey(pressed);
 		elapsed = chrono.getElapsedTime();
-		if(k == sf::Keyboard::Space && pressed && !jump){
-			jump = true;
-		}
 		if(!run) i = 4;
-		if(run){
+		if((k == sf::Keyboard::Left || k == sf::Keyboard::Right) &&  pressed) run = true;
+		if((k == sf::Keyboard::Left || k == sf::Keyboard::Right) && !pressed) run = false;
+		if(k == sf::Keyboard::Left && pressed) mario.setScale(-1,1);
+		if(k == sf::Keyboard::Right && pressed) mario.setScale(1,1);
+		if(k == sf::Keyboard::Space && pressed) jump = true;
+		if(run && !jump){
 			if(elapsed.asMilliseconds() >= t.asMilliseconds()){
 				i++;
 				if(i > 4) i = 0;
-				load_sprite(mario,TmarioRun[sizeMario][rotation][i]);
+				load_sprite(mario,TmarioRun[sizeMario][i]);
 				chrono.restart();
 			}
+		}
+		if(jump){
+			load_sprite(mario,TmarioJump[sizeMario]);
 		}
 	}
 }

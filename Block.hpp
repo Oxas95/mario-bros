@@ -17,6 +17,7 @@ class Block{
 		void drawAt(Fenetre&, int x, int y);
 		void drawAtCases(Fenetre&, int x, int y);
 		virtual bool isHitted(sf::Sprite&);
+		virtual bool isHitted(Block*);
 };
 
 #endif //Block_hpp

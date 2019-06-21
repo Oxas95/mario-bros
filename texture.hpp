@@ -47,16 +47,16 @@ class textures{
 		
 		static sf::Sprite mario;
 		
-		static sf::Texture TmarioStop[3][2];
-		static sf::Texture TmarioRun[3][2][4];
+		static sf::Texture TmarioStop[3];
+		static sf::Texture TmarioRun[3][4];
 		static sf::Texture TmarioDead;
-		static sf::Texture TmarioJump[3][2];
-		static sf::Texture TmarioTurn[3][2];
+		static sf::Texture TmarioJump[3];
+		static sf::Texture TmarioTurn[3];
 	
 		static void load_sprite(sf::Sprite &s, sf::Texture &t, const char* path);
 		static void load_texture(sf::Texture &texture, const char* path);
 		static void load_sprite(sf::Sprite &sprite, sf::Texture &texture);
-		static void funcMarioMove(Fenetre &w);
+		static void funcMarioMove(Fenetre*);
 		static void funcGif();
 		static void loadTextures();
 		static int getSpriteChar(char);

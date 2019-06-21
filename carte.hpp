@@ -13,6 +13,11 @@ typedef struct colonne_carte{
 	struct colonne_carte* next;
 } Colonne;
 
+typedef struct liste_block{
+	Block* backgroundBlock;
+	struct liste_block* next;
+}listeBlocks;
+
 typedef enum{
 	day,
 	night,
@@ -24,19 +29,27 @@ typedef enum{
 class Carte{
 	private :
 		int timer;
+
 		Colonne* debut;
+		listeBlocks* background;
+
 		string nomMonde;
 		string nomCarte;
+
 		Block*** tab_carte;
+
 		int size;
+		int sizeListe;
+
 		bool usingArray;
 	
 	public :
 		Carte();
 		Carte(const char* path);
 		~Carte();
-		bool ajoutBlock(Block*, int x, int y);
-		bool suppBlock(int x, int y);
+		void ajoutBlock(Block*, bool isBlockBackground);
+		void suppBlock(bool isBlockBackground, sf::Vector2i position);
+		void suppBlock(bool isBlockBackground, int x, int y);
 		void ajoutColonne();
 		void suppColonne();
 };
