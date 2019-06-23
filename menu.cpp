@@ -55,7 +55,8 @@ int menu_selection(Fenetre& w){
 		}
 		else if(k == sf::Keyboard::Return) continuer = false;
 		else if(w.isOpen() == false) res = 3, continuer = false;
-		elseif_buttonResize();
+		else if(k == sf::Keyboard::F1 && w.getZoom() > 1) w.resize(w.getZoom() - 1), affiche_textures(w);
+		else if(k == sf::Keyboard::F2) w.resize(w.getZoom() + 1), affiche_textures(w);
 		
 		w.writeCases("$",11,2);
 		w.drawSpriteCases(9,17 + res * 2,textures::goobaMenu);

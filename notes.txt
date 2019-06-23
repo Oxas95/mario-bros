@@ -1,1 +1,4 @@
 couleur du ciel en RGB : 107,140,255
+
+else if(k == sf::Keyboard::F1 && w.getZoom() > 1) w.resize(w.getZoom() - 1), affiche_textures(w);
+else if(k == sf::Keyboard::F2) w.resize(w.getZoom() + 1), affiche_textures(w);

@@ -12,8 +12,6 @@ typedef char bigcases[16];
 #define nbBigCasesX 16
 #define nbBigCasesY 14
 
-#define elseif_buttonResize() 	else if(k == sf::Keyboard::F1 && w.getZoom() > 1) w.resize(w.getZoom() - 1), affiche_textures(w);\
-								else if(k == sf::Keyboard::F2) w.resize(w.getZoom() + 1), affiche_textures(w);
 /*
 typedef enum{
 	b_coin,

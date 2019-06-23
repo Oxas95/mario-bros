@@ -39,7 +39,6 @@ class Carte{
 		Block*** tab_carte;
 
 		int size;
-		int sizeListe;
 
 		bool usingArray;
 	
@@ -51,7 +50,7 @@ class Carte{
 		void suppBlock(bool isBlockBackground, sf::Vector2i position);
 		void suppBlock(bool isBlockBackground, int x, int y);
 		void ajoutColonne();
-		void suppColonne();
+		bool suppColonne();
 };
 
 #endif //carte_hpp
