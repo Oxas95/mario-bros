@@ -6,7 +6,7 @@ Carte::Carte(){
     debut = NULL;
     tab_carte = NULL;
     background = NULL;
-    size = 0;
+    size = nbCasesX;
     int i;
     for(i = 0; i < nbCasesX; i++) ajoutColonne();
 }
@@ -26,15 +26,31 @@ Carte::~Carte(){
     int i,j;
     if(usingArray){
         for(i = 0; i < size; i++){
-            for(j = 0; j < nbCasesY; j++)   delete tab_carte[i][j];
+            for(j = 0; j < nbCasesY; j++) 
+                if(tab_carte[i][j]) delete tab_carte[i][j];
             delete [] tab_carte[i];
         }
         delete [] tab_carte;
     }
-    else 
-        for(i = 0; i < size; i++)
-            while (debut)
-                suppColonne();
+    else {
+        Colonne* copie;
+        while(debut){
+            for(j = 0; j < nbCasesY; j++) 
+                if(debut->tab[j]){ 
+                    delete debut->tab[j];
+                }
+            copie = debut->next;
+            delete debut;
+            debut = copie;
+        }
+    }
+    listeBlocks* copie = background;
+    while(background){
+        copie = background->next;
+        delete background->backgroundBlock;
+        delete background;
+        background = copie;
+    }
 }
 
 //recherche l'indice du dernier block en collision avec b dans la liste, ou -1 si pas de collision
@@ -55,7 +71,7 @@ int collision(listeBlocks* liste, Block* b){
     else return -1;
 }
 
-//ajout au début sauf s'il y a collision dans ce cas, on se place apres 
+//ajout au début sauf s'il y a collision dans ce cas, l'ajout se fait apres l'indice indiquant une collision
 listeBlocks* ajoutBlockBackground(listeBlocks* liste, Block* b){
     listeBlocks* nouveau = new listeBlocks();
     nouveau->backgroundBlock = b;
@@ -79,7 +95,7 @@ void Carte::ajoutBlock(Block* b, bool isBlockBackground){
     int i = 0;
     if(b){
         if(isBlockBackground){
-            //ajout trié si pas de collision, sinon apres celui avec collision
+            //ajout trié si pas de collision, sinon apres la/les collision(s)
             listeBlocks *copie = background;
             if(background){
                 if(b->getPosition().x < copie->backgroundBlock->getPosition().x){
@@ -102,7 +118,7 @@ void Carte::ajoutBlock(Block* b, bool isBlockBackground){
             else if(tab_carte[b->getPosition().x][b->getPosition().y])        delete b;
             else tab_carte[b->getPosition().x][b->getPosition().y] = b;
         }
-        else {
+        else if(debut) {
             Colonne* copie = debut;
             while (copie && i < b->getPosition().x){
                 copie = copie->next;
@@ -127,6 +143,7 @@ void Carte::suppBlock(bool isBlockBackground, sf::Vector2i pos){
                 if(copie->next->backgroundBlock->getPosition() == pos){
                     listeBlocks* supp = copie->next;
                     copie->next = copie->next->next;
+                    delete supp->backgroundBlock;
                     delete supp;
                 }
             }
@@ -136,7 +153,7 @@ void Carte::suppBlock(bool isBlockBackground, sf::Vector2i pos){
             }
         }
     }
-    else if(usingArray){
+    else if(usingArray && tab_carte){
         if(pos.y >= 0 || pos.y < nbCasesY){
             if(pos.x >= 0 || pos.x < size){
                 if(tab_carte[pos.x][pos.y]){
@@ -146,7 +163,7 @@ void Carte::suppBlock(bool isBlockBackground, sf::Vector2i pos){
             }
         }
     }
-    else {
+    else if(debut){
         int i = 0;
         Colonne* copie = debut;
         while (copie && i < pos.x){
@@ -166,12 +183,42 @@ void Carte::ajoutColonne(){
     int i;
 
     Colonne* copie = debut;
-    while(copie->next)  copie = copie->next;
+    while(copie->next) copie = copie->next;
     copie->next = new Colonne();
     copie->next->next = NULL;
-    for(i = 0; i < nbCasesY; i++)   copie->next->tab[i] = NULL;
+    for(i = 0; i < nbCasesY; i++) copie->next->tab[i] = NULL;
 
     size++;
+}
+
+bool Carte::ajoutColonne(int posX){
+    if(posX >= size) return false;
+    if(posX == size -1){
+        ajoutColonne();
+        return true;
+    }
+    int i;
+    if(posX == 0){
+        Colonne* nouveau = new Colonne();
+        for(i = 0; i < nbCasesY; i++) nouveau->tab[i] = NULL;
+        nouveau->next = debut;
+        debut = nouveau;
+        size++;
+        return true;
+    }
+    else {
+        Colonne* copie = debut;
+        for(i = 0; i < posX - 1; i++) copie = copie->next;
+        for(i = 0; i < nbCasesY; i++) if(copie->next->tab[i]) return false;
+        Colonne* nouveau = new Colonne();
+        for(i = 0; i < nbCasesY; i++) nouveau->tab[i] = NULL;
+        Colonne* suivant = copie->next;
+        copie->next = nouveau;
+        nouveau->next = suivant;
+        size++;
+        return true;
+    }
+    //return false; 
 }
 
 bool Carte::suppColonne(){
@@ -180,6 +227,7 @@ bool Carte::suppColonne(){
         Colonne* copie = debut;
         while(copie->next->next)  copie = copie->next;
         for(i = 0; i < nbCasesY; i++) if(copie->next->tab[i]) return false;
+        for(i = 0; i < nbCasesY; i++) if(copie->tab[i]) return false;
 
         if(background){
             listeBlocks* copie = background;

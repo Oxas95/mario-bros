@@ -50,6 +50,7 @@ class Carte{
 		void suppBlock(bool isBlockBackground, sf::Vector2i position);
 		void suppBlock(bool isBlockBackground, int x, int y);
 		void ajoutColonne();
+		bool ajoutColonne(int posX);
 		bool suppColonne();
 };
 
