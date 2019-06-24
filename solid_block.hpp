@@ -4,6 +4,7 @@
 #include "Block.hpp"
 #include "texture.hpp"
 #include "global.hpp"
+#include "carte.hpp"
 
 typedef enum{
 	block,
@@ -12,12 +13,13 @@ typedef enum{
 }solid_blockType;
 
 
-class Solid_block {
+class Solid_block : public Block{
 	private :
 		
 	
 	public :
-		//Solid_block(solid_blockType, int x, int y);
+		Solid_block(solid_blockType, areaType, int x, int y);
+		virtual ~Solid_block();
 };
 
 #endif //solid_block_hpp

@@ -2,9 +2,9 @@ ISFML = -I/usr/local/include
 LSFML = -lsfml-graphics -lsfml-window -lsfml-system -L/usr/local/lib
 RSFML = export LD_LIBRARY_PATH=/usr/local/lib &&
 
-ficCpp = mario.cpp	texture.cpp	Collision.cpp	fenetre.cpp				menu.cpp	play.cpp	Block.cpp	carte.cpp	solid_block.cpp	
-ficH   = 			texture.hpp	Collision.hpp	fenetre.hpp	global.hpp	menu.hpp	play.hpp	Block.hpp	carte.hpp	solid_block.hpp	
-ficO   = mario.o	texture.o	Collision.o		fenetre.o				menu.o		play.o		Block.o		carte.o		solid_block.o	
+ficCpp = mario.cpp	texture.cpp	Collision.cpp	fenetre.cpp				menu.cpp	play.cpp	Block.cpp	carte.cpp	solid_block.cpp	player.cpp	
+ficH   = 			texture.hpp	Collision.hpp	fenetre.hpp	global.hpp	menu.hpp	play.hpp	Block.hpp	carte.hpp	solid_block.hpp	player.hpp	
+ficO   = mario.o	texture.o	Collision.o		fenetre.o				menu.o		play.o		Block.o		carte.o		solid_block.o	player.o	
 
 default: reset mario
 
@@ -29,7 +29,7 @@ mario: $(ficO)
 Block.o: Block.cpp Block.hpp fenetre.hpp texture.hpp Collision.hpp
 	g++ -c -g -Wall Block.cpp Block.hpp $(ISFML)
 
-carte.o: carte.cpp carte.hpp Block.hpp global.hpp
+carte.o: carte.cpp carte.hpp Block.hpp global.hpp player.hpp
 	g++ -c -g -Wall carte.cpp carte.hpp $(ISFML)
 
 Collision.o: Collision.cpp Collision.hpp
@@ -41,13 +41,16 @@ fenetre.o: fenetre.cpp fenetre.hpp global.hpp texture.hpp
 mario.o: mario.cpp global.hpp menu.hpp fenetre.hpp texture.hpp
 	g++ -c -g -Wall mario.cpp $(ISFML)
 
-menu.o: menu.cpp menu.hpp global.hpp texture.hpp
+menu.o: menu.cpp menu.hpp global.hpp texture.hpp play.hpp
 	g++ -c -g -Wall menu.cpp menu.hpp $(ISFML)
 
-play.o: play.cpp play.hpp
+play.o: play.cpp play.hpp carte.hpp
 	g++ -c -g -Wall play.cpp play.hpp $(ISFML)
 
-solid_block.o: solid_block.cpp solid_block.hpp Block.hpp global.hpp texture.hpp
+player.o: player.cpp player.hpp fenetre.hpp global.hpp texture.hpp
+	g++ -c -g -Wall player.cpp player.hpp $(ISFML)
+
+solid_block.o: solid_block.cpp solid_block.hpp Block.hpp global.hpp texture.hpp carte.hpp
 	g++ -c -g -Wall solid_block.cpp solid_block.hpp
 
 texture.o: texture.cpp texture.hpp fenetre.hpp

@@ -45,6 +45,9 @@ sf::Texture textures::Tblock_coin[4][5];   //area, gif
 sf::Sprite textures::coin[4];              //area
 sf::Texture textures::Tcoin[4][5];         //area, gif
 
+sf::Sprite textures::hit[4];			   //area
+sf::Texture textures::Thit[4];			   //area
+
 sf::Sprite textures::mario;
 
 sf::Texture textures::TmarioStop[3];   //size of mario
@@ -112,6 +115,7 @@ void textures::loadSpriteDayBlock(){
 	load_sprite(ground[0],Tground[0],"sprites/day/blocks/ground.png");
 	load_sprite(block[0],Tblock[0],"sprites/day/blocks/block.png");
 	load_sprite(brick[0],Tbrick[0],"sprites/day/blocks/brick.png");
+	load_sprite(hit[0],Thit[0],"sprites/day/blocks/hit.png");
 	
 	load_sprite(block_coin[0],Tblock_coin[0][0],"sprites/day/blocks/b_coin1.png");
 	load_texture(Tblock_coin[0][1],"sprites/day/blocks/b_coin2.png");
@@ -165,42 +169,6 @@ void textures::load_sprite(sf::Sprite &sprite, sf::Texture &texture, const char*
 void textures::load_sprite(sf::Sprite &sprite, sf::Texture &texture){
 	sprite.setTexture(texture);
 	sprite.setPosition(sf::Vector2f(0, 0));
-}
-
-void textures::funcMarioMove(Fenetre* w){
-	sf::Clock chrono;
-	sf::Time t = sf::milliseconds(150);
-	sf::Time elapsed;
-	
-	bool jump = false;
-	bool run = false;
-	short sizeMario = 0;
-	int i = 0;
-	
-	sf::Keyboard::Key k = sf::Keyboard::Unknown;
-	bool pressed = false;
-	
-	while(1){
-		//k = w->getKey(pressed);
-		elapsed = chrono.getElapsedTime();
-		if(!run) i = 4;
-		if((k == sf::Keyboard::Left || k == sf::Keyboard::Right) &&  pressed) run = true;
-		if((k == sf::Keyboard::Left || k == sf::Keyboard::Right) && !pressed) run = false;
-		if(k == sf::Keyboard::Left && pressed) mario.setScale(-1,1);
-		if(k == sf::Keyboard::Right && pressed) mario.setScale(1,1);
-		if(k == sf::Keyboard::Space && pressed) jump = true;
-		if(run && !jump){
-			if(elapsed.asMilliseconds() >= t.asMilliseconds()){
-				i++;
-				if(i > 4) i = 0;
-				load_sprite(mario,TmarioRun[sizeMario][i]);
-				chrono.restart();
-			}
-		}
-		if(jump){
-			load_sprite(mario,TmarioJump[sizeMario]);
-		}
-	}
 }
 
 void textures::funcGif(){

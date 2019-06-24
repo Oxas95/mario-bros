@@ -2,6 +2,7 @@
 #include "fenetre.hpp"
 #include "global.hpp"
 #include "texture.hpp"
+#include "play.hpp"
 
 namespace menu{
 	
@@ -11,6 +12,7 @@ void affiche_textures(Fenetre& w){
 	w.drawSpriteCases(5,3,textures::logo);
 	w.drawSpriteCases(0,20,textures::colline[1]);
 	w.drawSpriteCases(23,23,textures::buisson[2]);
+	textures::load_sprite(textures::mario, textures::TmarioStop[0]);
 	w.drawSpriteCases(5,23,textures::mario);
 	w.writeCases("@ 2019 Kino",16,14);
 	w.writeCases("Play a Game",11,17);
@@ -53,10 +55,10 @@ int menu_selection(Fenetre& w){
 				res++;
 			}
 		}
-		else if(k == sf::Keyboard::Return) continuer = false;
+		else if(k == sf::Keyboard::Return && pressed) continuer = false;
 		else if(w.isOpen() == false) res = 3, continuer = false;
-		else if(k == sf::Keyboard::F1 && w.getZoom() > 1) w.resize(w.getZoom() - 1), affiche_textures(w);
-		else if(k == sf::Keyboard::F2) w.resize(w.getZoom() + 1), affiche_textures(w);
+		else if(k == sf::Keyboard::F1 && w.getZoom() > 1 && pressed) w.resize(w.getZoom() - 1), affiche_textures(w);
+		else if(k == sf::Keyboard::F2 && pressed) w.resize(w.getZoom() + 1), affiche_textures(w);
 		
 		w.writeCases("$",11,2);
 		w.drawSpriteCases(9,17 + res * 2,textures::goobaMenu);
@@ -76,6 +78,7 @@ void call_menu(Fenetre& w){
 		
 		if(res == 0){
 			//play
+			play(w);
 		}
 		else if(res == 1){
 			//make

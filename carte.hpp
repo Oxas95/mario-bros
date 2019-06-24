@@ -3,6 +3,7 @@
 
 #include "Block.hpp"
 #include "global.hpp"
+#include "player.hpp"
 #include <iostream>
 #include <string>
 
@@ -19,11 +20,11 @@ typedef struct liste_block{
 }listeBlocks;
 
 typedef enum{
-	day,
-	night,
-	under,
-	castle,
-	water
+	day = 0,
+	night = 0,
+	under = 1,
+	castle = 2,
+	water = 3
 }areaType;
 
 class Carte{
@@ -43,6 +44,8 @@ class Carte{
 		bool usingArray;
 	
 	public :
+		Player joueur;
+		
 		Carte();
 		Carte(const char* path);
 		~Carte();
@@ -52,6 +55,7 @@ class Carte{
 		void ajoutColonne();
 		bool ajoutColonne(int posX);
 		bool suppColonne();
+		void draw(Fenetre&);
 };
 
 #endif //carte_hpp

@@ -218,7 +218,6 @@ bool Fenetre::drawSprite(int x, int y, const char* file){
 	return true;
 }
 
-//fonction prise dans uvsqgraphics
 void Fenetre::draw_line(sf::Vector2i p1, sf::Vector2i p2, sf::Color coul) {
 	int xmin, xmax;
 	int ymin, ymax;
@@ -262,7 +261,6 @@ void Fenetre::draw_line(sf::Vector2f p1, sf::Vector2f p2, sf::Color color){
 }
 
 
-//fonction prise dans uvsqgraphics
 sf::Vector2i Fenetre::wait_clic(){
 	bool encore = true;
 	sf::Vector2i mousePos = sf::Mouse::getPosition(*window);

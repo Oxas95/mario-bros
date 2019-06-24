@@ -4,10 +4,10 @@
 #include "fenetre.hpp"
 
 class Block{
-	private :
-		sf::Sprite& sprite;
+	protected :
+		sf::Sprite* sprite;
 		sf::Vector2i position;
-		void setSprite(sf::Sprite&);
+		void setSprite(sf::Sprite*);
 	
 	public :
 		Block(sf::Vector2i position);
@@ -16,6 +16,8 @@ class Block{
 		sf::Vector2i getPosition();
 		void drawAt(Fenetre&, int x, int y);
 		void drawAtCases(Fenetre&, int x, int y);
+		void setSpritePosition(int x, int y);
+		void setSpritePosition(sf::Vector2i pos);
 		virtual bool isHitted(sf::Sprite&);
 		virtual bool isHitted(Block*);
 };

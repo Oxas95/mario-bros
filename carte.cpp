@@ -1,14 +1,15 @@
 #include "carte.hpp"
 #include "global.hpp"
 
-Carte::Carte(){
+Carte::Carte() : joueur(3,24){
     usingArray = false;
     debut = NULL;
     tab_carte = NULL;
     background = NULL;
-    size = nbCasesX;
     int i;
+    size = 0;
     for(i = 0; i < nbCasesX; i++) ajoutColonne();
+
 }
 
 Carte::Carte(const char* path){
@@ -180,14 +181,20 @@ void Carte::suppBlock(bool isBlockBackground, sf::Vector2i pos){
 }
 
 void Carte::ajoutColonne(){
+	printf("ajout Colonne size : %d\n",size + 1);
     int i;
-
-    Colonne* copie = debut;
-    while(copie->next) copie = copie->next;
-    copie->next = new Colonne();
-    copie->next->next = NULL;
-    for(i = 0; i < nbCasesY; i++) copie->next->tab[i] = NULL;
-
+    if(debut){
+        Colonne* copie = debut;
+        while(copie->next) copie = copie->next;
+        copie->next = new Colonne();
+        copie->next->next = NULL;
+        for(i = 0; i < nbCasesY; i++) copie->next->tab[i] = NULL;
+    }
+    else {
+        debut = new Colonne();
+        for(i = 0; i < nbCasesY; i++) debut->tab[i] = NULL;
+        debut->next = NULL;
+    }
     size++;
 }
 
@@ -217,8 +224,7 @@ bool Carte::ajoutColonne(int posX){
         nouveau->next = suivant;
         size++;
         return true;
-    }
-    //return false; 
+    } 
 }
 
 bool Carte::suppColonne(){
@@ -244,13 +250,26 @@ bool Carte::suppColonne(){
     return false;
 }
 
+void Carte::draw(Fenetre& w){
+    int i,j;
+    if(debut){
+        Colonne* copie = debut;
+        for(i = 0; i < size; i ++){
+            for(j = 0; j < nbCasesY; j++)
+                if(copie->tab[j]) copie->tab[j]->drawAtCases(w,copie->tab[j]->getPosition().x, copie->tab[j]->getPosition().y);
+				if(copie) copie = copie->next;
+				else printf("erreur size, i = %d, size = %d",i,size);
+        }
+    }
+    joueur.drawAt(w,joueur.getPosition().x * w.getZoom(), joueur.getPosition().y * w.getZoom());
+}
 
 /*void Carte::drawAroundJoueur(Fenetre& w, sf::Vector2i posMario){
 	sf::Vector2i point, min, max;
 	
 	//on dessine en decalé en mettant le joueur rouge au centre de la fenetre
-	min.x = jr->getPosition().x + jb->get_rayon() - w.getLargeur() / 2;
-	min.y = jr->getPosition().y + jb->get_rayon() - w.getHauteur() / 2;
+	min.x = posMario.x + sizeof(bigcases) - w.getLargeur() / 2;
+	min.y = posMario.y + sizeof(bigcases) - w.getHauteur() / 2;
 	max.x = min.x + w.getLargeur();
 	max.y = min.y + w.getHauteur();
 	
