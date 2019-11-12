@@ -56,6 +56,7 @@ class Carte{
 		bool ajoutColonne(int posX);
 		bool suppColonne();
 		void draw(Fenetre&);
+		void drawAroundJoueur(Fenetre& w);
 };
 
 #endif //carte_hpp

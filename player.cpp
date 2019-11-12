@@ -7,22 +7,20 @@ Player::Player() : Player(0,0){}
 Player::Player(int x, int y) : Player(sf::Vector2i(x,y)){}
 
 Player::Player(sf::Vector2i position) : sprite(textures::mario) {
-    position.x *= sizeof(cases);
-	position.y *= sizeof(cases);
-    this->position = position;
+    setPositionCases(position);
     size = 0;
     rotation = 1;
     mp = stop;
 }
 
-void Player::changeSprite(marioPosition mp){
+void Player::changeSprite(actionBody mp){
     this->mp = mp;
     switch(mp){
-        case marioPosition::stop : textures::load_sprite(sprite, textures::TmarioStop[size]);   break;
-        case marioPosition::jump : textures::load_sprite(sprite, textures::TmarioJump[size]);   break;
-        case marioPosition::run  : textures::load_sprite(sprite, textures::TmarioRun[size][0]); break;
-        case marioPosition::turn : textures::load_sprite(sprite, textures::TmarioTurn[size]);   break;
-        case marioPosition::dead : textures::load_sprite(sprite, textures::TmarioDead);         break;
+        case actionBody::stop : textures::load_sprite(sprite, textures::TmarioStop[size]);   break;
+        case actionBody::jump : textures::load_sprite(sprite, textures::TmarioJump[size]);   break;
+        case actionBody::turn : textures::load_sprite(sprite, textures::TmarioTurn[size]);   break;
+        case actionBody::dead : textures::load_sprite(sprite, textures::TmarioDead);         break;
+        default : break; //run et sprint sont gérés par le thread qui permet de faire un gif pendant la marche
     }
 }
 
@@ -42,6 +40,12 @@ void Player::turnRight(int zoomFenetre){
 	}
 }
 
+void Player::move(short vitesse){
+	vitesse *= rotation;
+	position.x += vitesse;
+	
+}
+
 void Player::setPosition(int x, int y){
     setPosition(sf::Vector2i(x,y));
 }
@@ -52,6 +56,10 @@ void Player::setPositionCases(int x, int y){
 
 void Player::setPosition(sf::Vector2i position){
     this->position = position;
+}
+
+void Player::setPositionCases(sf::Vector2i position){
+    setPosition(position.x * sizeof(cases), position.y * sizeof(cases));
 }
 
 sf::Vector2i Player::getPosition(){
@@ -82,6 +90,14 @@ void Player::retrecir(){
         size--;
         changeSprite(mp);
     }
+}
+
+actionBody Player::getActionBody(){
+	return mp;
+}
+
+short Player::getRotation(){
+    return rotation;
 }
 
 short Player::getSize(){

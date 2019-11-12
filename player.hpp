@@ -8,8 +8,9 @@ typedef enum{
     dead,
     jump,
     run,
+    sprint,
     turn
-} marioPosition;
+} actionBody;
 
 class Player{
     private :
@@ -17,23 +18,27 @@ class Player{
         short size;
         sf::Vector2i position;
         short rotation;
-        marioPosition mp;
+        actionBody mp;
     
     public :
         Player();
         Player(int x, int y);
         Player(sf::Vector2i position);
-        void changeSprite(marioPosition);
+        void changeSprite(actionBody);
         void turnLeft(int zoomFenetre);
         void turnRight(int zoomFenetre);
+        void move(short vitesse);
         void setPosition(int x, int y);
         void setPositionCases(int x, int y);
         void setPosition(sf::Vector2i);
+        void setPositionCases(sf::Vector2i position);
         sf::Vector2i getPosition();
         void drawAt(Fenetre& w, int x, int y);
         void drawAtCase(Fenetre& w, int x, int y);
         void grandir();
         void retrecir();
+        actionBody getActionBody();
+        short getRotation();
         short getSize();
         ~Player();
 };

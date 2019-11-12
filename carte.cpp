@@ -181,7 +181,7 @@ void Carte::suppBlock(bool isBlockBackground, sf::Vector2i pos){
 }
 
 void Carte::ajoutColonne(){
-	printf("ajout Colonne size : %d\n",size + 1);
+	printf("ajout Colonne, size : %d\n",size + 1);
     int i;
     if(debut){
         Colonne* copie = debut;
@@ -264,22 +264,26 @@ void Carte::draw(Fenetre& w){
     joueur.drawAt(w,joueur.getPosition().x * w.getZoom(), joueur.getPosition().y * w.getZoom());
 }
 
-/*void Carte::drawAroundJoueur(Fenetre& w, sf::Vector2i posMario){
+void Carte::drawAroundJoueur(Fenetre& w){
 	sf::Vector2i point, min, max;
 	
 	//on dessine en decalé en mettant le joueur rouge au centre de la fenetre
-	min.x = posMario.x + sizeof(bigcases) - w.getLargeur() / 2;
-	min.y = posMario.y + sizeof(bigcases) - w.getHauteur() / 2;
+	min.x = joueur.getPosition().x + sizeof(bigcases) - w.getLargeur() / 2;
 	max.x = min.x + w.getLargeur();
-	max.y = min.y + w.getHauteur();
-	
-	for (unsigned int i = 0; i < entity.size(); i++){ //on dessine les entités qui sont autour
-		e_ronde = (Entity_ronde*)entity[i];
-		if(e_ronde->getPosition().x + e_ronde->get_rayon() * 2 > min.x && e_ronde->getPosition().x < max.x 
-		&& e_ronde->getPosition().y + e_ronde->get_rayon() * 2 > min.y && e_ronde->getPosition().y < max.y){
-			point.x = entity[i]->getPosition().x - min.x;
-			point.y = entity[i]->getPosition().y - min.y;
-			entity[i]->drawAt(w, point);
+	int i,j;
+	Colonne* copie = debut;
+	for (i = 0; i < size; i++){ //on dessine les entités qui sont autour
+		for(j = 0; j < nbCasesY; j++){
+			if(copie->tab[j]){
+				if(copie->tab[j]->getPosition().x + (int) sizeof(bigcases) > min.x && copie->tab[j]->getPosition().x < max.x){
+					point.x = copie->tab[j]->getPosition().x - min.x;
+					copie->tab[j]->drawAt(w, point.x * sizeof(cases), copie->tab[j]->getPosition().y * sizeof(cases));
+				}
+			}
 		}
+		copie = copie->next;
 	}
-}*/
+	point.x = joueur.getPosition().x - min.x;
+	joueur.drawAt(w, point.x, joueur.getPosition().y);
+	
+}

@@ -22,27 +22,35 @@ Fenetre::Fenetre(){
 }
 
 void Fenetre::resize(const short zoom){
-	if(window) window->close();
-	if(zoom > 0){
-		zoom_cases = zoom;
+	close();
+	delete window;
+	static bool fullscreen = false;
+	if((zoom > 0 && zoom < 5) || fullscreen){
+		if(!fullscreen) zoom_cases = zoom;
 		printf("zoom : %d\n",zoom_cases);
 		this->largeur = sizeof(cases) * zoom_cases * nbCasesX;
 		this->hauteur = sizeof(cases) * zoom_cases * nbCasesY;
 		window = new sf::RenderWindow(sf::VideoMode(largeur, hauteur), "Super Mario Bros NES", sf::Style::Titlebar | sf::Style::Close, settings);
+		fullscreen = false;
+	}
+	else if(zoom == -1){
+		printf("Fullscreen mode video\n");
+		window = new sf::RenderWindow(sf::VideoMode(largeur, hauteur), "Super Mario Bros NES", sf::Style::Fullscreen, settings);
+		fullscreen = true;
 	}
 }
 
 Fenetre::~Fenetre(){
 	close();
+	delete window;
 }
 
 void Fenetre::close(){
-	window->close();
-	delete window;
-	window = NULL;
+	if(window) window->close();
 }
 
 bool Fenetre::isOpen(){
+	if(window == NULL) return false;
 	return window->isOpen();
 }
 
@@ -279,7 +287,6 @@ sf::Vector2i Fenetre::wait_clic(){
 				encore = false;
 			}
 		}
-		window->display();
 	}
 	printf("Clic GAUCHE en %4d %4d               \n",mousePos.x, mousePos.y); fflush(stdout);
 	return mousePos;
@@ -289,7 +296,7 @@ sf::Keyboard::Key Fenetre::getKey(bool& pressed){
 	sf::Event event;
 	while (window->pollEvent(event)){
 		if (event.type == sf::Event::Closed){
-			window->close();
+			close();
 		}
 		if(event.type == sf::Event::KeyPressed){
 			pressed = true;
