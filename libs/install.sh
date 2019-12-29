@@ -21,38 +21,19 @@ installCMake(){
 	sleep 1
 }
 
-installTGUI(){
-	reset
-	echo "installation TGUI"
-	sleep 1
-	rm -fr build
-	mkdir build
-	unzip TGUI-0.8.5.zip
-	mv TGUI-0.8.5 TGUI
-	cd build
-	cmake . ../TGUI
-	make
-	cd ..
-	rm -fr TGUI
-	sleep 1
-}
-
 main(){
 	cd libs
-	until [ $reponse = "4" ]; do
+	until [ $reponse = "3" ]; do
 		clear
 		echo "1.install SFML"
-		echo "2.install CMake"
-		echo "3.install TGUI"
-		echo "4.exit"
+		echo "2.install CMake (not used in this project)"
+		echo "3.exit"
 		read -p "> " reponse
 		if [ $reponse = "1" ]; then
 			installSFML
 		elif [ $reponse = "2" ]; then
 			installCMake
-		elif [ $reponse = "3" ]; then
-			installTGUI
-		elif [ $reponse != "4" ]; then
+		elif [ $reponse != "3" ]; then
 			echo "reponse incorrect"
 			sleep 2
 		fi
