@@ -18,25 +18,22 @@ Fenetre::Fenetre(){
 	
 	window = NULL;
 	
-	resize(zoom_cases);
+	printf("zoom : %d\n",zoom_cases);
+	this->largeur = sizeof(cases) * zoom_cases * nbCasesX;
+	this->hauteur = sizeof(cases) * zoom_cases * nbCasesY;
+	window = new sf::RenderWindow(sf::VideoMode(largeur, hauteur), "Super Mario Bros NES", sf::Style::Titlebar | sf::Style::Close, settings);
 }
 
+void fullscreenMode(sf::RenderWindow *window, int zoom, int largeur, int hauteur, sf::ContextSettings settings);
+
 void Fenetre::resize(const short zoom){
-	close();
-	delete window;
-	static bool fullscreen = false;
-	if((zoom > 0 && zoom < 5) || fullscreen){
-		if(!fullscreen) zoom_cases = zoom;
-		printf("zoom : %d\n",zoom_cases);
+	if(zoom > 0){
+		printf("zoom : %d\n",zoom);
+		zoom_cases = zoom;
 		this->largeur = sizeof(cases) * zoom_cases * nbCasesX;
 		this->hauteur = sizeof(cases) * zoom_cases * nbCasesY;
-		window = new sf::RenderWindow(sf::VideoMode(largeur, hauteur), "Super Mario Bros NES", sf::Style::Titlebar | sf::Style::Close, settings);
-		fullscreen = false;
-	}
-	else if(zoom == -1){
-		printf("Fullscreen mode video\n");
-		window = new sf::RenderWindow(sf::VideoMode(largeur, hauteur), "Super Mario Bros NES", sf::Style::Fullscreen, settings);
-		fullscreen = true;
+		window->setSize(sf::Vector2u(largeur, hauteur));
+		window->setView(sf::View(sf::FloatRect(0, 0, largeur, hauteur)));
 	}
 }
 

@@ -2,9 +2,19 @@
 #include "texture.hpp"
 #include "global.hpp"
 
-Player::Player() : Player(0,0){}
+Player::Player() : sprite(textures::mario) {
+	setPositionCases(sf::Vector2i(0,0));
+    size = 0;
+    rotation = 1;
+    mp = stop;
+}
 
-Player::Player(int x, int y) : Player(sf::Vector2i(x,y)){}
+Player::Player(int x, int y) : sprite(textures::mario) {
+	setPositionCases(sf::Vector2i(x,y));
+    size = 0;
+    rotation = 1;
+    mp = stop;
+}
 
 Player::Player(sf::Vector2i position) : sprite(textures::mario) {
     setPositionCases(position);
@@ -16,10 +26,10 @@ Player::Player(sf::Vector2i position) : sprite(textures::mario) {
 void Player::changeSprite(actionBody mp){
     this->mp = mp;
     switch(mp){
-        case actionBody::stop : textures::load_sprite(sprite, textures::TmarioStop[size]);   break;
-        case actionBody::jump : textures::load_sprite(sprite, textures::TmarioJump[size]);   break;
-        case actionBody::turn : textures::load_sprite(sprite, textures::TmarioTurn[size]);   break;
-        case actionBody::dead : textures::load_sprite(sprite, textures::TmarioDead);         break;
+        case stop : textures::load_sprite(sprite, textures::TmarioStop[size]);   break;
+        case jump : textures::load_sprite(sprite, textures::TmarioJump[size]);   break;
+        case turn : textures::load_sprite(sprite, textures::TmarioTurn[size]);   break;
+        case dead : textures::load_sprite(sprite, textures::TmarioDead);         break;
         default : break; //run et sprint sont gérés par le thread qui permet de faire un gif pendant la marche
     }
 }

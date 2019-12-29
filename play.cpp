@@ -35,26 +35,26 @@ int zoom;
 void funcRun(Player* joueur){
 	sf::Clock chronoR;
 	sf::Clock chronoM;
-	sf::Time run = sf::milliseconds(0);  //temps du gif de mario qui avance
+	sf::Time running = sf::milliseconds(0);  //temps du gif de mario qui avance
 	sf::Time move = sf::milliseconds(20); //temps de déplacement
 	sf::Time elapsedR;
 	sf::Time elapsedM;
 	int i = 0;
-	while(joueur->getActionBody() == actionBody::run || joueur->getActionBody() == actionBody::sprint || joueur->getActionBody() == actionBody::jump){
+	while(joueur->getActionBody() == run || joueur->getActionBody() == sprint || joueur->getActionBody() == jump){
 		elapsedR = chronoR.getElapsedTime();
 		elapsedM = chronoM.getElapsedTime();
-		if(elapsedR.asMilliseconds() >= run.asMilliseconds()){
-			run = sf::milliseconds(80);
+		if(elapsedR.asMilliseconds() >= running.asMilliseconds()){
+			running = sf::milliseconds(80);
 			i++;
 			if(i > 3) i = 0;
-			if(joueur->getActionBody() != actionBody::jump) textures::load_sprite(textures::mario,textures::TmarioRun[joueur->getSize()][i]);
+			if(joueur->getActionBody() != jump) textures::load_sprite(textures::mario,textures::TmarioRun[joueur->getSize()][i]);
 			chronoR.restart();
 		}
 		if(elapsedM.asMilliseconds() >= move.asMilliseconds()){
-			if(joueur->getActionBody() == actionBody::sprint) joueur->move(zoom); //il avance une fois de plus s'il sprint
+			if(joueur->getActionBody() == sprint) joueur->move(zoom); //il avance une fois de plus s'il sprint
 			joueur->move(zoom);
 			//ne pas aller en x < 0
-			if(joueur->getPosition().x < sizeof(bigcases) && joueur->getRotation() < 0) 
+			if(joueur->getPosition().x < (int) sizeof(bigcases) && joueur->getRotation() < 0) 
 				joueur->setPosition(sizeof(bigcases) - 2,joueur->getPosition().y);
 			if(joueur->getPosition().x < 0 && joueur->getRotation() > 0)
 				joueur->setPosition(0,joueur->getPosition().y);
@@ -101,7 +101,7 @@ void play(Fenetre &w){
 		if(k == sf::Keyboard::N && pressed) isSprinting = true;
 		if(k == sf::Keyboard::N && !pressed) isSprinting = false;
 
-		if(k == sf::Keyboard::F1 && w.getZoom() > 1 && pressed) w.resize(w.getZoom() - 1), c.draw(w), zoom = w.getZoom();
+		if(k == sf::Keyboard::F1 && pressed) w.resize(w.getZoom() - 1), c.draw(w), zoom = w.getZoom();
 		else if(k == sf::Keyboard::F2 && pressed) w.resize(w.getZoom() + 1), c.draw(w), zoom = w.getZoom();
 		else if(k == sf::Keyboard::F10 && pressed) w.resize(-1), c.draw(w), zoom = w.getZoom();
 		
