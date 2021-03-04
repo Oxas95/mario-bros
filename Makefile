@@ -70,13 +70,5 @@ git:
 	git commit
 	git push
 
-tar_gz: clean
-	rm -fr ../projet_cpp
-	rm -f ../Projet_cpp_Bazin-Lapegue-De_Jesus.tar.gz
-	mkdir ../projet_cpp
-	cp -r * ../projet_cpp
-	tar czvf ../Projet_cpp_Bazin-Lapegue-De_Jesus.tar.gz ../projet_cpp
-	rm -fr ../projet_cpp
-
 mario2:
 	g++ -g -Wall $(ficCpp) $(ficH) $(ISFML) $(LSFML) -o mario
